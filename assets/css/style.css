@@ -1,0 +1,34 @@
+:root {
+    --bg-primary: #f8dc3d;
+    --text-secondary: #4c2013;
+    --accent-third: #f7cb9e;
+}
+
+/* Navbar Custom */
+.navbar-bananago {
+    background-color: var(--bg-primary);
+    border-bottom: 3px solid var(--text-secondary); /* Border sedikit lebih tebal */
+    padding-top: 1.5rem;    /* Membuat navbar lebih tinggi */
+    padding-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Logo yang diperbesar */
+.navbar-logo {
+    height: 135px; /* Ukuran sebelumnya 40px, sekarang 80px */
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-bananago .nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 700;
+    font-size: 1.1rem; /* Sedikit lebih besar agar seimbang dengan navbar tinggi */
+}
+
+/* Hover effect */
+.navbar-bananago .nav-link:hover {
+    color: #000 !important;
+    background-color: var(--accent-third);
+    border-radius: 8px;
+}
