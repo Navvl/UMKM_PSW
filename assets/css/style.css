@@ -1,34 +1,123 @@
 :root {
-    --bg-primary: #f8dc3d;
-    --text-secondary: #4c2013;
-    --accent-third: #f7cb9e;
+  --bg-primary: #f8dc3d;
+  --text-secondary: #4c2013;
+  --accent-third: #f7cb9e;
 }
 
-/* Navbar Custom */
+@font-face {
+    font-family: 'Super Kidpop';
+    src: url('../fonts/SuperKidpop.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* NAVBAR SECTIONNNN */
 .navbar-bananago {
+    position: absolute; /* Biar dia melayang di atas Hero Section blay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5rem 0;
     background-color: var(--bg-primary);
-    border-bottom: 3px solid var(--text-secondary); /* Border sedikit lebih tebal */
-    padding-top: 1.5rem;    /* Membuat navbar lebih tinggi */
-    padding-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
 
-/* Logo yang diperbesar */
+/* --- State Pas Lagi Nge-Slide Down (Sticky) blay --- */
+.navbar-bananago.is-sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-primary); 
+    box-shadow: 0 4px 15px rgba(76, 32, 19, 0.15);
+    padding: 0.2rem 0; /* Lebih ramping pas melayang blay */
+    
+    /* ANIMASI UTAMA blay */
+    animation: navbarSlideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Logo dikecilkan dikit pas sticky biar makin elegan blay */
+.navbar-bananago.is-sticky .navbar-logo {
+    height: 55px; 
+}
+
+/* Keyframes: Gerakan jatuh dari atas blay */
+@keyframes navbarSlideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .navbar-logo {
-    height: 135px; /* Ukuran sebelumnya 40px, sekarang 80px */
-    width: auto;
-    object-fit: contain;
+    height: 75px; /* Dikecilkan sedikit agar proporsional */
 }
 
-.navbar-bananago .nav-link {
-    color: var(--text-secondary) !important;
-    font-weight: 700;
-    font-size: 1.1rem; /* Sedikit lebih besar agar seimbang dengan navbar tinggi */
+/* Membagi Navbar jadi 3 Kolom Seimbang */
+.nav-col-left, .nav-col-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
-/* Hover effect */
-.navbar-bananago .nav-link:hover {
-    color: #000 !important;
-    background-color: var(--accent-third);
-    border-radius: 8px;
+.nav-col-right {
+    justify-content: flex-end;
+}
+
+.nav-col-center {
+    flex: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Burger Icon Custom */
+.burger-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: var(--text-secondary); /* Warna cokelat #4c2013 */
+    border-radius: 10px;
+}
+
+/* Menu di dalam Offcanvas */
+.nav-link-menu {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-link-menu:hover {
+    color: #fff; /* Kontras saat di-hover */
+}
+
+/* Button Order Now Pojok Kanan */
+.btn-nav-order {
+    background-color: var(--text-secondary);
+    color: var(--bg-primary) !important;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-order:hover {
+    background-color: #000;
+    transform: scale(1.05);
 }
