@@ -1,5 +1,5 @@
 <?php
- $koneksi = mysqli_connect("localhost","root","","poltek");
+ $koneksi = mysqli_connect("localhost","root","","UMKM_PSW");
  
  // check connection
   if (mysqli_connect_errno()){
