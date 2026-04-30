@@ -14,7 +14,7 @@
 
 /* NAVBAR SECTIONNNN */
 .navbar-bananago {
-    position: absolute; /* Biar dia melayang di atas Hero Section blay */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -24,39 +24,29 @@
     transition: all 0.3s ease;
 }
 
-/* --- State Pas Lagi Nge-Slide Down (Sticky) blay --- */
 .navbar-bananago.is-sticky {
     position: fixed !important;
     top: 0;
     left: 0;
     background-color: var(--bg-primary); 
     box-shadow: 0 4px 15px rgba(76, 32, 19, 0.15);
-    padding: 0.2rem 0; /* Lebih ramping pas melayang blay */
-    
-    /* ANIMASI UTAMA blay */
+    padding: 0.2rem 0;
     animation: navbarSlideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Logo dikecilkan dikit pas sticky biar makin elegan blay */
 .navbar-bananago.is-sticky .navbar-logo {
     height: 55px; 
 }
 
-/* Keyframes: Gerakan jatuh dari atas blay */
 @keyframes navbarSlideDown {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
 
 .navbar-logo {
-    height: 75px; /* Dikecilkan sedikit agar proporsional */
+    height: 75px;
 }
 
-/* Membagi Navbar jadi 3 Kolom Seimbang */
 .nav-col-left, .nav-col-right {
     flex: 1;
     display: flex;
@@ -74,7 +64,6 @@
     align-items: center;
 }
 
-/* Burger Icon Custom */
 .burger-icon {
     width: 30px;
     height: 20px;
@@ -84,28 +73,24 @@
 }
 
 .burger-icon span {
-    display: block;
     height: 4px;
     width: 100%;
     background-color: var(--text-secondary);
     border-radius: 10px;
 }
 
-/* Menu di dalam Offcanvas */
 .nav-link-menu {
     font-size: 2.5rem;
     font-weight: 900;
     color: var(--text-secondary);
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.3s ease;
 }
 
 .nav-link-menu:hover {
     color: #fff;
 }
 
-/* Button Order Now Pojok Kanan */
 .btn-nav-order {
     background-color: var(--text-secondary);
     color: var(--bg-primary) !important;
@@ -113,8 +98,6 @@
     border-radius: 50px;
     font-weight: 800;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
 }
 
 .btn-nav-order:hover {
@@ -122,27 +105,150 @@
     transform: scale(1.05);
 }
 
-/* ===================================================== */
-/* ================= FIX OVERLAP NAVBAR ================= */
-/* ===================================================== */
 
-/* Biar semua konten gak ketiban navbar */
-body {
+body:not(.home-page):not(.login-page) {
     padding-top: 110px;
 }
 
-/* Khusus hero / section atas biar lebih lega */
 .hero-section {
     padding-top: 120px;
 }
 
-/* Pastikan teks utama di atas background */
 .hero-section .container {
     position: relative;
     z-index: 2;
 }
 
-/* Background text tetap di belakang */
 .hero-bg-text {
     z-index: 1;
+}
+
+/* ===================================================== */
+/* ===================== LOGIN PAGE ===================== */
+/* ===================================================== */
+
+.login-page {
+    background-color: var(--bg-primary);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0 !important;
+}
+
+/* Background text ala home */
+.login-page::before {
+    content: "BANANAGO";
+    position: absolute;
+    font-size: 120px;
+    font-weight: 900;
+    color: rgba(76, 32, 19, 0.05);
+    z-index: 0;
+}
+
+/* Form login */
+.login-form {
+    position: relative;
+    z-index: 2;
+    width: 380px;
+    padding: 40px;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(76, 32, 19, 0.2);
+    text-align: center;
+}
+
+/* Title */
+.login-form h3 {
+    font-family: 'Super Kidpop', sans-serif;
+    color: var(--text-secondary);
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Input */
+.login-form input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    border: 2px solid var(--accent-third);
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+/* Focus input */
+.login-form input:focus {
+    border-color: var(--text-secondary);
+    outline: none;
+}
+
+/* Button login */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--text-secondary);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #000;
+    transform: scale(1.05);
+}
+
+/* Link home */
+.btn-home {
+    display: block;
+    margin-top: 15px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-home:hover {
+    text-decoration: underline;
+}
+/* Register khusus (biar lebih tinggi) */
+.register-form {
+    min-height: 450px;
+}
+/* ===================================================== */
+/* ================= NAV AUTH BUTTON ==================== */
+/* ===================================================== */
+
+/* Login button (solid) */
+.btn-nav-auth {
+    background-color: var(--text-secondary);
+    color: var(--bg-primary);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-nav-auth:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Register button (outline) */
+.btn-nav-auth-outline {
+    border: 2px solid var(--text-secondary);
+    color: var(--text-secondary);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-nav-auth-outline:hover {
+    background-color: var(--text-secondary);
+    color: #fff;
 }
