@@ -87,7 +87,7 @@
     display: block;
     height: 4px;
     width: 100%;
-    background-color: var(--text-secondary); /* Warna cokelat #4c2013 */
+    background-color: var(--text-secondary);
     border-radius: 10px;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .nav-link-menu:hover {
-    color: #fff; /* Kontras saat di-hover */
+    color: #fff;
 }
 
 /* Button Order Now Pojok Kanan */
@@ -120,4 +120,29 @@
 .btn-nav-order:hover {
     background-color: #000;
     transform: scale(1.05);
+}
+
+/* ===================================================== */
+/* ================= FIX OVERLAP NAVBAR ================= */
+/* ===================================================== */
+
+/* Biar semua konten gak ketiban navbar */
+body {
+    padding-top: 110px;
+}
+
+/* Khusus hero / section atas biar lebih lega */
+.hero-section {
+    padding-top: 120px;
+}
+
+/* Pastikan teks utama di atas background */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Background text tetap di belakang */
+.hero-bg-text {
+    z-index: 1;
 }

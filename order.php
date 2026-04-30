@@ -5,38 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BananaGo - Order</title>
 
-    <!-- Bootstrap -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS -->
+   
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+
     <div id="navbar-placeholder"></div>
 
     <main class="container my-5">
 
-        <h1 class="text-center mb-5">Order BananaGo 🍌</h1>
+        <h1 class="text-center mb-5">Order BananaGo </h1>
 
-        
-        <h3 class="mb-3">🍌 Keripik Pisang</h3>
+    
+        <h3 class="mb-3"> Keripik Pisang</h3>
         <h4 class="mb-3">Semua Variant Terbaik Untuk Anda</h4>
         <hr>
+
         <div class="row g-4 mb-5">
 
+            <!-- ITEM -->
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog1.webp" class="card-img-top">
                     <div class="card-body">
-                        <h5>Banana Chips Chesse</h5>
+                        <h5>Banana Chips Cheese</h5>
                         <p>Variant Terbaru</p>
                         <p class="fw-bold text-success">Rp 15.000</p>
                         <button class="btn btn-warning w-100">Order</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog2.webp" class="card-img-top">
@@ -48,6 +51,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog3.webp" class="card-img-top">
@@ -59,6 +63,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog4.webp" class="card-img-top">
@@ -70,6 +75,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog5.webp" class="card-img-top">
@@ -81,11 +87,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog6.webp" class="card-img-top">
                     <div class="card-body">
-                        <h5>Banana Chips Gralic Seasalt</h5>
+                        <h5>Banana Chips Garlic Seasalt</h5>
                         <p>Variant Terbaru</p>
                         <p class="fw-bold text-success">Rp 15.000</p>
                         <button class="btn btn-warning w-100">Order</button>
@@ -95,45 +102,32 @@
 
         </div>
 
-        
+
         <h3 class="mb-3">🥔 Granola</h3>
         <h4 class="mb-3">Semua Variant Terbaik Untuk Anda</h4>
         <hr>
-        <div class="row g-4 mb-5">
 
+        <div class="row g-4 mb-5">
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog2.webp" class="card-img-top">
                     <div class="card-body">
-                        <h5>Keripik Pisang</h5>
-                        <p>Renyah & manis</p>
+                        <h5>Granola Original</h5>
+                        <p>Renyah & sehat</p>
                         <p class="fw-bold text-success">Rp 12.000</p>
                         <button class="btn btn-warning w-100">Order</button>
                     </div>
                 </div>
             </div>
-
         </div>
 
         
         <h3 class="mb-3">Cookies Granola</h3>
         <h4 class="mb-3">Semua Variant Terbaik Untuk Anda</h4>
         <hr>
+
         <div class="row g-4 mb-5">
-
             <div class="col-md-4">
-                <div class="card text-center h-100 shadow">
-                    <img src="assets/img/Catalog3.webp" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Banana Milk</h5>
-                        <p>Susu pisang segar</p>
-                        <p class="fw-bold text-success">Rp 20.000</p>
-                        <button class="btn btn-warning w-100">Order</button>
-                    </div>
-                </div>
-            </div>
-
-             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog3.webp" class="card-img-top">
                     <div class="card-body">
@@ -150,6 +144,7 @@
         <h3 class="mb-3">Suny Banana</h3>
         <h4 class="mb-3">Semua Variant Terbaik Untuk Anda</h4>
         <hr>
+
         <div class="row g-4">
 
             <div class="col-md-4">
@@ -163,17 +158,7 @@
                     </div>
                 </div>
             </div>
-<div class="col-md-4">
-                <div class="card text-center h-100 shadow">
-                    <img src="assets/img/Catalog1.webp" class="card-img-top">
-                    <div class="card-body">
-                        <h5>Banana Cake</h5>
-                        <p>Kue pisang lembut</p>
-                        <p class="fw-bold text-success">Rp 35.000</p>
-                        <button class="btn btn-warning w-100">Order</button>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-md-4">
                 <div class="card text-center h-100 shadow">
                     <img src="assets/img/Catalog1.webp" class="card-img-top">
@@ -185,14 +170,27 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="card text-center h-100 shadow">
+                    <img src="assets/img/Catalog1.webp" class="card-img-top">
+                    <div class="card-body">
+                        <h5>Banana Cake</h5>
+                        <p>Kue pisang lembut</p>
+                        <p class="fw-bold text-success">Rp 35.000</p>
+                        <button class="btn btn-warning w-100">Order</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </main>
 
-    <!-- Footer -->
+    
     <div id="footer-placeholder"></div>
 
-    <!-- JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 
