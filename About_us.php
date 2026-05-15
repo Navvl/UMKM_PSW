@@ -44,7 +44,7 @@
                     street food yang tidak hanya enak, tapi juga memorable.
                 </p>
 
-                <a href="index.php" class="btn-piscok-lg mt-3">Back to Home</a>
+                <a href="index.html" class="btn-piscok-lg mt-3">Back to Home</a>
             </div>
 
             <!-- RIGHT IMAGE -->
@@ -56,8 +56,8 @@
                     display: inline-block;
                     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
                 ">
-                    <img src="assets/img/home/Catalog1.webp" 
-                         style="width:300px; border-radius:20px;">
+                    <img src="assets/img/home/white_glaze.webp" 
+                         style="width:400px; border-radius:20px;">
                 </div>
             </div>
 

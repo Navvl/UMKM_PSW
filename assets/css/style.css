@@ -14,7 +14,7 @@
 
 /* NAVBAR SECTIONNNN */
 .navbar-bananago {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -103,15 +103,6 @@
 .btn-nav-order:hover {
     background-color: #000;
     transform: scale(1.05);
-}
-
-
-body:not(.home-page):not(.login-page) {
-    padding-top: 110px;
-}
-
-.hero-section {
-    padding-top: 120px;
 }
 
 .hero-section .container {
@@ -251,4 +242,67 @@ body:not(.home-page):not(.login-page) {
 .btn-nav-auth-outline:hover {
     background-color: var(--text-secondary);
     color: #fff;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#navbar-placeholder {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-bananago {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+
+body {
+    padding-top: 110px;
+}
+
+
+html,
+body {
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+    background-color: var(--bg-primary);
+}
+
+body {
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding-top: 60px;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.hero-section {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#navbar-placeholder {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-bananago {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
