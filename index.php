@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="id">
   <head>
@@ -14,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
-    <div id="navbar-placeholder"></div>
+    <?php include 'components/navbar.php'; ?>
 <body class="home-page"></body>
     <section class="hero-section">
         <div class="hero-bg-text">BANANAGO</div>
@@ -28,9 +31,6 @@
                         <div class="stagger-line"><span>BANANA GO</span></div>
                         <div class="stagger-line"><span>RIGHT</span></div>
                         <div class="stagger-line"><span>HERE!</span></div>
-                    </div>
-                    <div class="btn-entrance mt-4">
-                        <a href="#order" class="btn-piscok-lg">Shop Now</a>
                     </div>
                 </div>
 
@@ -86,7 +86,7 @@
                     </p>
 
                     <div class="mt-4">
-                        <a href="../order.php" class="btn-piscok-md me-2">Order Now</a>
+                        <a href="produk.php" class="btn-piscok-md me-2">Order Now</a>
                     </div>
                 </div>
             </div>

@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - BananaGo</title>
 
-    <link rel="stylesheet" href="/umkm_psw/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
 </head>
 
-<body class="login-page">
+<body>
 
-<div class="login-background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-</div>
+<form class="auth-form" method="POST" action="config/proses_login.php">
 
-<form class="login-form" method="post" action="cek_login.php">
-
-    <h3>Login</h3>
+    <h2>Login</h2>
 
     <input type="text" name="username" placeholder="Username" required>
+
     <input type="password" name="password" placeholder="Password" required>
 
-    <button type="submit" class="btn-login">Login</button>
+    <button type="submit" class="btn-auth">
+        Login
+    </button>
 
-    <a href="index.html" class="btn-home">← Kembali ke Home</a>
+    <p class="auth-text">
+        Belum punya akun?
+        <a href="register.php">Register</a>
+    </p>
+
+    <a href="index.html" class="btn-home">
+        ← Back Home
+    </a>
 
 </form>
 

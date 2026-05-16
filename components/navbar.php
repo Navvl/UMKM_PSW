@@ -1,3 +1,9 @@
+<?php
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+?>
+
 <nav class="navbar navbar-bananago">
   <div class="container">
     
@@ -19,14 +25,33 @@
 
    <div class="nav-col-right">
 
-    <!-- LOGIN -->
-    <a href="login.php" class="btn-nav-auth me-2">Login</a>
+<?php if(isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
 
-    <!-- REGISTER -->
-    <a href="register.php" class="btn-nav-auth-outline me-2">Register</a>
+    <a href="profil.php" class="btn-nav-order">
+        Profil
+    </a>
 
-    <!-- ORDER -->
-    <a href="order.php" class="btn-nav-order">Order Now</a>
+    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
+        <a href="kelola_user.php" class="btn-nav-order">
+            Kelola User
+        </a>
+    <?php endif; ?>
+
+    <a href="logout.php" class="btn-nav-order">
+        Logout
+    </a>
+
+<?php else: ?>
+
+    <a href="register.php" class="btn-nav-order">
+        Register
+    </a>
+
+    <a href="login.php" class="btn-nav-order">
+        Login
+    </a>
+
+<?php endif; ?>
 
 </div>
 
@@ -39,10 +64,11 @@
   </div>
   <div class="offcanvas-body">
     <ul class="nav flex-column align-items-center mt-5">
-      <li class="nav-item mb-4"><a class="nav-link-menu" href="index.html">Home</a></li>
-      <li class="nav-item mb-4"><a class="nav-link-menu" href="order.php">Our Product</a></li>
+      <li class="nav-item mb-4"><a class="nav-link-menu" href="index.php">Home</a></li>
+      <li class="nav-item mb-4"><a class="nav-link-menu" href="produk.php">Order Now</a></li>
+      <li class="nav-item mb-4"><a class="nav-link-menu" href="Pesanan  .php">Your Order</a></li>
       <li class="nav-item mb-4"><a class="nav-link-menu" href="#contact">Contact</a></li>
-      <li class="nav-item mb-4"><a class="nav-link-menu" href="#about">About Us</a></li>
+      <li class="nav-item mb-4"><a class="nav-link-menu" href="about_us.php">About Us</a></li>
     </ul>
   </div>
 </div>

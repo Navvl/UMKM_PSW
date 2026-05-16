@@ -5,57 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - BananaGo</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
 </head>
 
-<body class="login-page">
+<body>
 
-<!-- Background -->
-<div class="login-background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-</div>
+<form class="auth-form" method="POST" action="config/proses_register.php">
 
-<!-- FORM REGISTER -->
-<form class="login-form register-form" method="post" action="proses_register.php">
+    <h2>Register</h2>
 
-    <h3>Register BananaGo</h3>
+    <input type="text" name="username" placeholder="Username" required>
 
-    <p style="color:#4c2013; font-size:14px; margin-bottom:20px;">
-        Daftar untuk mulai order pisang favoritmu!
+    <input type="password" name="password" placeholder="Password" required>
+
+    <button type="submit" class="btn-auth">
+        Register
+    </button>
+
+    <p class="auth-text">
+        Sudah punya akun?
+        <a href="login.php">Login</a>
     </p>
 
-    <input 
-        type="text" 
-        name="nama" 
-        placeholder="Nama Lengkap" 
-        required
-    >
-
-    <input 
-        type="password" 
-        name="password" 
-        placeholder="Password" 
-        required
-    >
-
-    <input 
-        type="text" 
-        name="phone" 
-        placeholder="Nomor HP" 
-        required
-    >
-
-    <input 
-        type="text" 
-        name="address" 
-        placeholder="Alamat" 
-        required
-    >
-
-    <button type="submit" class="btn-login">Register</button>
-
-    <a href="login.php" class="btn-home">← Sudah punya akun? Login</a>
+    <a href="index.html" class="btn-home">
+        ← Back Home
+    </a>
 
 </form>
 
