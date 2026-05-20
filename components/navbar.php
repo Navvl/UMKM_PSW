@@ -66,7 +66,7 @@ if(session_status() == PHP_SESSION_NONE){
     <ul class="nav flex-column align-items-center mt-5">
       <li class="nav-item mb-4"><a class="nav-link-menu" href="index.php">Home</a></li>
       <li class="nav-item mb-4"><a class="nav-link-menu" href="produk.php">Order Now</a></li>
-      <li class="nav-item mb-4"><a class="nav-link-menu" href="Pesanan  .php">Your Order</a></li>
+      <li class="nav-item mb-4"><a class="nav-link-menu" href="Pesanan.php">Your Order</a></li>
       <li class="nav-item mb-4"><a class="nav-link-menu" href="#contact">Contact</a></li>
       <li class="nav-item mb-4"><a class="nav-link-menu" href="about_us.php">About Us</a></li>
     </ul>

@@ -32,6 +32,7 @@ session_start();
                         <div class="stagger-line"><span>RIGHT</span></div>
                         <div class="stagger-line"><span>HERE!</span></div>
                     </div>
+
                 </div>
 
                 <div class="col-lg-7">
