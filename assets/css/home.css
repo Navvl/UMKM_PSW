@@ -411,288 +411,350 @@
 
 
 
-/* ABOUT SECTIONNNN */
-/* --- About Section: Clean & Premium White --- */
-.about-section {
-    background-color: #FFFFFF; /* Balik ke putih blay */
-    padding: 100px 0;
-    margin-top: -1px; /* Pastikan gak ada celah kuning */
+/* --- ABOUT SECTION PREMIUM (CLEAN COCKTAIL) --- */
+.about-section-premium {
+    background-color: #FFFFFF; /* Latar belakang putih bersih */
+    color: var(--text-secondary); 
+    padding: 0; 
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
-.brand-heading {
-    color: var(--text-secondary); /* #4c2013 */
-    font-size: 4.5rem; /* Lebih besar & bold */
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -2px; /* Letter spacing negatif bikin font terlihat lebih modern & "mahal" */
-    margin-bottom: 20px;
+.about-section-premium {
+    background-color: #FFFFFF;
+    color: var(--text-secondary); 
+    position: relative;
+    z-index: 2;
 }
 
-.brand-description {
-    color: #444;
-    font-size: 1.15rem;
-    /* Jarak baris kita press dari 1.8 ke 1.5 biar lebih compact & enak dibaca */
-    line-height: 1.5; 
-    font-weight: 400;
-    max-width: 800px;
-    margin: 0 auto;
+/* Wadah Gambar Persegi */
+.about-img-box {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(76, 32, 19, 0.08); /* Efek shadow untuk memisahkan gambar dari background putih */
 }
 
-/* Styling untuk teks yang ditekankan */
-.highlight {
+.about-img-box img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Memaksa rasio gambar menjadi kotak persegi sempurna */
+    object-fit: cover;
+    display: block;
+}
+
+.about-subtitle {
+    color: var(--text-secondary); 
+    font-size: 1.8rem;
+    font-style: italic;
     font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.brand-heading-premium {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 25px;
     color: var(--text-secondary);
 }
 
-/* --- Pastikan Wave-nya Putih Sempurna --- */
-.hero-wave .shape-fill {
-    fill: #FFFFFF; 
+/* Highlight kuning bersih TANPA border hitam */
+.about-highlight-clean {
+    font-weight: 900;
+    color: var(--text-secondary);
+    background-color: var(--bg-primary); /* Blok warna kuning murni */
+    padding: 2px 18px;
+    border: none !important; /* Menghilangkan border */
+    display: inline-block;
+    transform: rotate(-1deg); 
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.08); /* Efek shadow tipis agar tetap pop out */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .brand-heading { 
-        font-size: 2.8rem; 
-        letter-spacing: -1px; 
-    }
-    .brand-description { 
-        font-size: 1.05rem; 
-    }
-}
-
-.brand-description-marketing {
-    color: #444;
-    font-size: 1.4rem; 
-    line-height: 1.4;   
+.brand-description-premium {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #444444; 
+    margin-bottom: 40px;
+    max-width: 550px;
     font-weight: 500;
-    max-width: 700px;
-    margin: 0 auto;
+}
+
+/* --- List Poin Fitur --- */
+.about-feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.about-feature-list i {
+    color: var(--text-secondary); 
+    font-size: 1.2rem;
+    margin-right: 15px;
+    background-color: var(--bg-primary); 
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+}
+
+/* --- STYLING BUTTON ORDER NOW PREMIUM --- */
+.btn-about-order {
+    background-color: var(--text-secondary); /* Warna dasar cokelat distro */
+    color: var(--bg-primary) !important; /* Teks kuning kontras */
+    padding: 14px 35px;
+    border-radius: 14px; /* Gaya semi-kotak tegas khas distro */
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 3px solid var(--text-secondary);
+    box-shadow: 5px 5px 0px #000000; /* Shadow tebal padat */
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-about-order i {
+    transition: transform 0.2s ease;
+}
+
+/* Efek Hover Interaktif */
+.btn-about-order:hover {
+    background-color: var(--bg-primary); /* Tukar warna saat di-hover */
+    color: var(--text-secondary) !important;
+    transform: translate(-2px, -2px); /* Efek tombol terangkat */
+    box-shadow: 7px 7px 0px #000000;
+}
+
+.btn-about-order:hover i {
+    transform: translateX(5px); /* Animasi panah geser sedikit ke kanan */
+}
+
+/* --- Responsif Mobile --- */
+@media (max-width: 991px) {
+    .brand-heading-premium {
+        font-size: 2.8rem;
+    }
+    .about-highlight-clean {
+        font-size: 2.6rem;
+        padding: 2px 10px;
+    }
+    .about-content {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .about-feature-list li {
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+
+/* WHY SECTION */
+/* --- NEW SECTION: WHY BANANA GO? --- */
+.why-section-clean {
+    background-color: #FFFFFF;
+}
+
+.why-title {
+    color: var(--text-secondary);
     letter-spacing: -0.5px;
 }
 
-.btn-piscok-md {
-    background-color: var(--text-secondary);
-    color: var(--bg-primary) !important;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    border: 2px solid var(--text-secondary);
+.why-img-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(76, 32, 19, 0.08); /* Bayangan sedikit diperhalus agar elemen tidak terkesan melayang berlebihan */
 }
 
-.btn-piscok-md:hover {
-    background-color: #000;
-    border-color: #000;
-    transform: translateY(-3px);
+.why-img-wrapper img {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Dikembalikan ke proporsi portrait yang pas tanpa crop berlebihan */
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.btn-outline-piscok-md {
-    background-color: transparent;
-    color: var(--text-secondary) !important;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-    border: 2px solid var(--text-secondary);
-    transition: all 0.3s ease;
+.why-row:hover .why-img-wrapper img {
+    transform: scale(1.05);
 }
 
-.btn-outline-piscok-md:hover {
-    background-color: var(--text-secondary);
-    color: #fff !important;
-    transform: translateY(-3px);
+/* Penyesuaian text alignment untuk mobile agar tetap rapi */
+@media (max-width: 991.98px) {
+    .why-row {
+        text-align: center !important;
+    }
+    .why-row .text-lg-end {
+        text-align: center !important;
+    }
 }
-
-
-
 
 /* TESTIMONI SECTION */
-.testimonials-section {
+/* --- WAVY TESTIMONIAL SECTION --- */
+.testimonials-section-wavy {
+    background-color: var(--bg-primary); /* Latar kuning distro dikembalikan */
     position: relative;
-    background-image: url('../img/home/banana-bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Background diem blay */
     padding: 0;
-    overflow: hidden;
+    z-index: 1;
 }
 
-.testi-container {
-    position: relative;
-    z-index: 5;
-    padding: 150px 0;
+/* Pengaturan Jarak Konten (Agar tidak tertabrak gelombang) */
+.testi-container-wavy {
+    padding: 140px 0 160px 0; /* Padding tebal atas bawah */
 }
 
-/* --- Stats Block Styling blay --- */
-.stat-block-wrapper {
-    background-color: var(--text-secondary); /* Cokelat */
-    padding: 20px 30px;
-    border-radius: 20px;
-    width: fit-content;
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
-}
-
-.stat-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.stat-number {
-    color: var(--bg-primary); /* Kuning */
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 1;
-}
-
-.stat-icon-big {
-    color: #fff;
-    font-size: 4.5rem;
-    line-height: 1;
-}
-
-.stat-label-footer {
-    color: #fff;
-    font-weight: 800;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    margin-top: 10px;
-    border-top: 2px dashed rgba(255,255,255,0.3);
-    padding-top: 10px;
-}
-
-/* --- Heading Block Kidpop blay --- */
-.testi-block-title {
-    font-family: 'SuperKidpop', sans-serif;
-    background-color: var(--text-secondary);
-    color: var(--bg-primary);
-    font-size: 3.5rem;
-    padding: 5px 25px;
-    width: fit-content;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    transform: rotate(-1deg);
-    box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
-    font-family: 'Super Kidpop', sans-serif;
-}
-
-.testi-block-title:nth-child(2) {
-    transform: rotate(1deg);
-    margin-left: 30px;
-}
-
-/* --- Card Testimoni Compact blay --- */
-.testi-card {
-    position: relative;
-    background: #fff;
-    border: 4px solid var(--text-secondary);
-    border-radius: 30px;
-    padding: 70px 30px 30px;
-    margin-top: 60px;
-    box-shadow: 15px 15px 0px rgba(76, 32, 19, 0.2);
-    animation: floatingCard 5s ease-in-out infinite;
-    text-align: center;
-}
-
-.pp-sticker {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    overflow: hidden;
-    z-index: 10;
-}
-
-.pp-sticker img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.testi-content p {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    font-style: italic;
-    font-weight: 600;
-    line-height: 1.6;
-}
-
-.testi-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 2px dashed #eee;
-}
-
-.stars-gold {
-    color: var(--bg-primary);
-    font-size: 1.2rem;
-    /* Outline cokelat tipis biar bintang kuning pop out blay */
-    text-shadow: 1px 1px 0 var(--text-secondary);
-}
-
-.thumbs-icon {
-    color: var(--text-secondary);
-    font-size: 1.4rem;
-}
-
-/* --- Waves Fix blay --- */
-.testi-wave-top, .testi-wave-bottom {
+/* --- SVG WAVES --- */
+.wave-divider {
     position: absolute;
     left: 0;
     width: 100%;
     line-height: 0;
-    z-index: 10;
+    z-index: 0;
 }
 
-.testi-wave-top { top: -1px; }
-.testi-wave-bottom { bottom: -1px; }
+.wave-top { top: -1px; }
+.wave-bottom { bottom: -1px; }
 
-.testi-wave-top svg, .testi-wave-bottom svg {
+.wave-divider svg {
     width: calc(100% + 1.3px);
-    height: 100px;
+    height: 110px; /* Tinggi gelombang proporsional */
 }
 
-@keyframes floatingCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+/* --- HEADERS & BADGES --- */
+.text-secondary-brand {
+    color: var(--text-secondary) !important;
 }
 
-/* Mobile responsive blay */
+.highlight-white-clean {
+    font-weight: 900;
+    color: var(--text-secondary);
+    background-color: #FFFFFF; /* Highlight berubah putih karena background kuning */
+    padding: 2px 18px;
+    border: none !important;
+    display: inline-block;
+    transform: rotate(-1deg); 
+    box-shadow: 4px 4px 0px rgba(76, 32, 19, 0.08);
+}
+
+.trusted-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 5px 15px rgba(76, 32, 19, 0.08); /* Shadow sedikit ditebalkan untuk pop-out dari kuning */
+    font-size: 0.9rem;
+}
+
+/* --- MINIMALIST CARDS --- */
+.testi-card-modern {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 40px 30px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(76, 32, 19, 0.06);
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testi-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(76, 32, 19, 0.12);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 4rem;
+    color: #F8F5F0;
+    line-height: 1;
+    z-index: 0;
+}
+
+.stars-gold {
+    color: var(--bg-primary); 
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testi-text {
+    color: #555555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 500;
+    font-style: italic;
+    flex-grow: 1; 
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+/* Profil User */
+.testi-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-color: #F0ECE4 !important;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FBF9F6;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.user-role {
+    color: #888888;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsif Mobile */
 @media (max-width: 768px) {
-    .testi-block-title { font-size: 2rem; }
-    .testi-container { padding: 100px 0; align-items: center; }
-
-    .stat-block-wrapper {
-        width: 50%; /* Biar menuhin 50% kolomnya blay */
-        padding: 15px 10px; /* Kurangi padding biar gak sesek */
-        display: flex;
+    .testi-container-wavy {
+        padding: 90px 0 110px 0;
+    }
+    .trusted-badge {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        gap: 5px;
+        padding: 12px 20px;
     }
-
-    .stat-number {
-        font-size: 2.2rem; /* Kecilin dikit di HP blay */
-    }
-
-    .stat-icon-big {
-        font-size: 2.5rem; /* Sesuaikan ukuran ikon blay */
-    }
-
-    .stat-label-footer {
-        font-size: 0.65rem; /* Kecilin teks label biar gak overflow */
-        letter-spacing: 1px;
+    .testi-card-modern {
+        padding: 30px 20px;
     }
 }
 

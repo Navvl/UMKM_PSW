@@ -2,6 +2,12 @@
 if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
+
+// Logic untuk menghitung total item di keranjang (khusus user)
+$cart_count = 0;
+if(isset($_SESSION['role']) && $_SESSION['role'] == 'user' && isset($_SESSION['cart'])) {
+    $cart_count = array_sum($_SESSION['cart']);
+}
 ?>
 
 <nav class="navbar navbar-bananago">
@@ -18,24 +24,29 @@ if(session_status() == PHP_SESSION_NONE){
     </div>
 
     <div class="nav-col-center">
-      <a class="navbar-brand m-0" href="index.html">
+      <a class="navbar-brand m-0" href="index.php">
         <img src="assets/img/logo.jpg" alt="Banana_Go Logo" class="navbar-logo">
       </a>
     </div>
 
-   <div class="nav-col-right">
+    <div class="nav-col-right d-flex align-items-center gap-3">
 
 <?php if(isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
 
-    <a href="profil.php" class="btn-nav-order">
-        Profil
-    </a>
-
-    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-        <a href="kelola_user.php" class="btn-nav-order">
-            Kelola User
+    <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'user'): ?>
+        <!-- ICON CART KHUSUS USER -->
+        <a href="cart.php" class="nav-icon-btn position-relative" title="View Cart">
+            <i class="bi bi-bag-fill"></i>
+            <?php if($cart_count > 0): ?>
+                <span class="cart-badge"><?= $cart_count ?></span>
+            <?php endif; ?>
         </a>
     <?php endif; ?>
+
+    <!-- REVISI: BUTTON PROFIL DIUBAH JADI ICON MURNI COY -->
+    <a href="profil.php" class="nav-icon-btn" title="My Profile">
+        <i class="bi bi-person-circle"></i>
+    </a>
 
     <a href="logout.php" class="btn-nav-order">
         Logout

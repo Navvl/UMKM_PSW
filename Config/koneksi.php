@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "umkm_psw");
+$conn = mysqli_connect("localhost", "root", "", "banana_go");
 
 if (!$conn) {
     die("Koneksi database gagal: " . mysqli_connect_error());
