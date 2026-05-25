@@ -1,0 +1,116 @@
+/* --- ROOT VARIABLES --- */
+:root {
+    --bg-primary: #f8dc3d;
+    --text-secondary: #4c2013;
+    --accent-third: #f7cb9e;
+}
+
+/* --- BASE STYLING --- */
+.kelola-bg-clean {
+    background-color: #FFFFFF;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-secondary);
+}
+
+.kelola-main-title {
+    color: var(--text-secondary);
+    letter-spacing: -0.5px;
+}
+
+/* --- CARD MODERN --- */
+.kelola-card-modern {
+    background-color: #FAFAFA;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #F0ECE4;
+    box-shadow: 0 8px 24px rgba(76, 32, 19, 0.03);
+}
+
+/* --- TABLE STYLING --- */
+.kelola-table-minimal th {
+    color: #888;
+    border-bottom: 2px solid #E5E5E5;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.kelola-table-minimal td {
+    padding: 16px 10px;
+    vertical-align: middle;
+}
+
+.kelola-table-minimal tbody tr {
+    transition: background-color 0.2s;
+}
+
+.kelola-table-minimal tbody tr:hover {
+    background-color: #FFFFFF; 
+}
+
+/* --- ROLE BADGES --- */
+.role-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.badge-user {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+.badge-admin {
+    background-color: var(--text-secondary);
+    color: var(--bg-primary);
+}
+
+/* --- FORM ELEMENTS (SELECT & BUTTON) --- */
+.kelola-select {
+    width: auto;
+    min-width: 110px;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 6px 30px 6px 12px; /* Ruang untuk panah dropdown */
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background-color: #FFFFFF;
+    box-shadow: none !important;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.kelola-select:focus {
+    border-color: var(--text-secondary);
+}
+
+.btn-kelola-update {
+    background-color: var(--text-secondary);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-kelola-update:hover:not(:disabled) {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-kelola-update.disabled {
+    background-color: #E5E5E5;
+    color: #A3A3A3;
+    cursor: not-allowed;
+}

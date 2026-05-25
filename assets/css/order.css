@@ -1,0 +1,145 @@
+/* --- Hilangkan Background Putih Belakang --- */
+.order-card-transparent {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 20px 0;
+}
+
+.section-title {
+    color: var(--text-secondary);
+    font-weight: 800;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* --- Styling Card Baru (Mirip Gambar 2) --- */
+.product-card-modern {
+    background-color: #F8F4E6; /* Warna cream soft */
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03); /* Shadow super halus */
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.product-card-modern:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Area Gambar --- */
+.product-image-wrapper {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Rahasia biar BG putih foto nyatu sama card cream */
+}
+
+/* --- Tipografi Konten --- */
+.product-card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.product-stock {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* --- Layout Harga, Input, dan Tombol (Flexbox) --- */
+.product-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto; /* Dorong ke paling bawah card */
+}
+
+.price-qty-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+}
+
+.qty-input-modern {
+    width: 60px;
+    padding: 4px 8px;
+    border: 1px solid #d4cdc1;
+    border-radius: 8px;
+    background: transparent;
+    font-weight: 700;
+    color: var(--text-secondary);
+    outline: none;
+}
+
+/* --- Styling Tombol Order (Kuning Distro) --- */
+.btn-order-yellow {
+    background-color: var(--bg-primary, #FFD100); 
+    color: var(--text-secondary);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.btn-order-yellow:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+/* --- Styling Tombol Admin --- */
+.admin-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit-modern, .btn-delete-modern {
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.btn-edit-modern {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.btn-delete-modern {
+    background-color: #fee2e2;
+    color: #ef4444;
+}

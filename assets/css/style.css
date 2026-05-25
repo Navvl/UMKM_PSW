@@ -12,9 +12,9 @@
     font-display: swap;
 }
 
-/* NAVBAR SECTIONNNN */
+/* NAVBAR SECTION */
 .navbar-bananago {
-    position: absolute; /* Biar dia melayang di atas Hero Section blay */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -24,43 +24,35 @@
     transition: all 0.3s ease;
 }
 
-/* --- State Pas Lagi Nge-Slide Down (Sticky) blay --- */
 .navbar-bananago.is-sticky {
     position: fixed !important;
     top: 0;
     left: 0;
     background-color: var(--bg-primary); 
     box-shadow: 0 4px 15px rgba(76, 32, 19, 0.15);
-    padding: 0.2rem 0; /* Lebih ramping pas melayang blay */
-    
-    /* ANIMASI UTAMA blay */
+    padding: 0.2rem 0;
     animation: navbarSlideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Logo dikecilkan dikit pas sticky biar makin elegan blay */
 .navbar-bananago.is-sticky .navbar-logo {
     height: 55px; 
 }
 
-/* Keyframes: Gerakan jatuh dari atas blay */
 @keyframes navbarSlideDown {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
 
 .navbar-logo {
-    height: 75px; /* Dikecilkan sedikit agar proporsional */
+    height: 75px;
 }
 
-/* Membagi Navbar jadi 3 Kolom Seimbang */
-.nav-col-left, .nav-col-right {
+.nav-col-left,
+.nav-col-right {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: center;    
+    gap: 15px;
 }
 
 .nav-col-right {
@@ -74,7 +66,6 @@
     align-items: center;
 }
 
-/* Burger Icon Custom */
 .burger-icon {
     width: 30px;
     height: 20px;
@@ -84,28 +75,24 @@
 }
 
 .burger-icon span {
-    display: block;
     height: 4px;
     width: 100%;
-    background-color: var(--text-secondary); /* Warna cokelat #4c2013 */
+    background-color: var(--text-secondary);
     border-radius: 10px;
 }
 
-/* Menu di dalam Offcanvas */
 .nav-link-menu {
     font-size: 2.5rem;
     font-weight: 900;
     color: var(--text-secondary);
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.3s ease;
 }
 
 .nav-link-menu:hover {
-    color: #fff; /* Kontras saat di-hover */
+    color: #fff;
 }
 
-/* Button Order Now Pojok Kanan */
 .btn-nav-order {
     background-color: var(--text-secondary);
     color: var(--bg-primary) !important;
@@ -113,11 +100,216 @@
     border-radius: 50px;
     font-weight: 800;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
 }
 
 .btn-nav-order:hover {
     background-color: #000;
     transform: scale(1.05);
 }
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-bg-text {
+    z-index: 1;
+}
+
+.nav-cart-icon {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #FBF9F6;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-cart-icon:hover {
+    background-color: var(--text-secondary);
+    color: #FFFFFF !important;
+}
+
+/* --- PAKSA SELEKTOR SPESIFIK BIAR GAK KALAH SAMA CSS LAIN --- */
+.nav-col-right a.nav-icon-btn,
+.nav-icon-btn {
+    color: #4c2013 !important; /* Langsung kunci pakai warna cokelat distro lu, cegah variabel kosong */
+    font-size: 1.35rem !important; 
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    background-color: #FBF9F6 !important; /* Warna krem soft di dalam lingkaran */
+    border-radius: 50% !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: none !important; /* Pastikan murni borderless */
+}
+
+/* UI/UX Hover Feedback - Paksa Tukar Warna */
+.nav-col-right a.nav-icon-btn:hover,
+.nav-icon-btn:hover {
+    background-color: #4c2013 !important; /* Latar berubah cokelat */
+    color: #f8dc3d !important; /* Ikon berubah kuning distro saat disentuh */
+}
+
+/* --- BADGE NOTIFIKASI KERANJANG --- */
+.cart-badge {
+    position: absolute !important;
+    top: -2px !important;
+    right: -4px !important;
+    background-color: #DC2626 !important; 
+    color: #FFFFFF !important;
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    padding: 2px 6px !important;
+    border-radius: 50px !important;
+    border: 2px solid #FFFFFF !important; 
+    line-height: 1 !important;
+    box-shadow: 0 2px 5px rgba(76, 32, 19, 0.15) !important;
+}
+
+/* FOOTER */
+.shop-footer-clean {
+    background-color: #FAFAFA;
+    color: var(--text-secondary);
+    border-top: 1px solid #F0ECE4;
+    font-size: 0.95rem;
+}
+
+.footer-brand-title {
+    color: var(--text-secondary);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.footer-section-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.footer-text-muted {
+    color: #666666;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.footer-link {
+    color: #666666;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+    color: var(--text-secondary);
+}
+
+.footer-divider {
+    border-top: 1px dashed var(--accent-third);
+    opacity: 0.5;
+}
+
+.footer-tagline {
+    color: var(--accent-third);
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .order-title {
+        font-size: 2.2rem;
+    }
+
+    .order-card {
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+    .order-table {
+        font-size: 0.85rem;
+    }
+
+    .btn-order {
+        padding: 10px 18px;
+        margin-bottom: 5px;
+    }
+
+.btn-nav-auth-outline:hover {
+    background-color: var(--text-secondary);
+    color: #fff;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#navbar-placeholder {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-bananago {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+
+body {
+    padding-top: 110px;
+}
+
+
+html,
+body {
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+    background-color: var(--bg-primary);
+}
+
+body {
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding-top: 60px;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.hero-section {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#navbar-placeholder {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-bananago {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+}   
