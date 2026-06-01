@@ -204,13 +204,20 @@ session_start();
         <div class="contact-card form-card">
             <h2>Kirim Pesan</h2>
 
-            <form>
-                <input type="text" placeholder="Nama kamu">
-                <input type="email" placeholder="Email kamu">
-                <textarea placeholder="Tulis pesan kamu..."></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+        <form action="Config/proses_contact.php" method="POST">
+
+    <input type="text" name="nama" placeholder="Nama kamu" required>
+
+    <input type="email" name="email" placeholder="Email kamu" required>
+
+    <textarea name="pesan" placeholder="Tulis pesan kamu..." required></textarea>
+
+    <button type="submit">
+        Send Message
+    </button>
+
+</form>
+            </div>
 
     </div>
 

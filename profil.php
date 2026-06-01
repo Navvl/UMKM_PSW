@@ -173,6 +173,20 @@ $orders = mysqli_query($conn, "
                     </div>
 
                     <div class="col-md-12">
+                        <div class="col-md-12">
+    <a href="admin_messages.php" class="admin-quick-card">
+        <div class="icon-wrapper">
+            <i class="bi bi-envelope-fill"></i>
+        </div>
+
+        <div class="text-wrapper">
+            <span class="title">Customer Messages</span>
+            <span class="desc">View messages from contact form</span>
+        </div>
+
+        <i class="bi bi-chevron-right ms-auto arrow-icon"></i>
+    </a>
+</div>
                         <a href="Pesanan.php" class="admin-quick-card primary-action">
                             <div class="icon-wrapper"><i class="bi bi-clipboard2-check-fill"></i></div>
                             <div class="text-wrapper">

@@ -1,10 +1,19 @@
 <?php
 session_start();
+include 'koneksi.php';
 
-include "koneksi.php";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: ../login.php");
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    echo $username;
+    echo "<br>";
+    echo $password;
+
+} else {
+
+    header("Location: ../Login.php");
     exit;
 }
 

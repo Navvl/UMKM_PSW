@@ -2,6 +2,6 @@
 $conn = mysqli_connect("localhost", "root", "", "banana_go");
 
 if (!$conn) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
+    die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>
