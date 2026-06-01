@@ -27,7 +27,7 @@
         <a href="login.php">Login</a>
     </p>
 
-    <a href="index.html" class="btn-home">
+    <a href="index.php" class="btn-home">
         ← Back Home
     </a>
 
