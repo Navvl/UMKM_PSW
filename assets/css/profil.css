@@ -1,0 +1,238 @@
+/* --- ROOT COLORS (Memastikan variabel bawaan aktif) --- */
+:root {
+    --bg-primary: #f8dc3d;
+    --text-secondary: #4c2013;
+    --accent-third: #f7cb9e;
+}
+
+/* --- BASE STYLING --- */
+.profile-bg-clean {
+    background-color: #FFFFFF;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-secondary);
+}
+
+.profile-main-title {
+    color: var(--text-secondary);
+    letter-spacing: -1px;
+}
+
+/* --- LEFT COLUMN: PROFILE CARD --- */
+.profile-card-modern {
+    background-color: #FAFAFA;
+    border-radius: 24px;
+    padding: 40px 30px;
+    border: 1px solid #F0ECE4;
+    box-shadow: 0 10px 30px rgba(76, 32, 19, 0.03);
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    background-color: var(--accent-third);
+    color: var(--text-secondary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 15px rgba(247, 203, 158, 0.5);
+}
+
+.profile-username {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.profile-role-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.user-badge { background-color: var(--bg-primary); color: var(--text-secondary); }
+.admin-badge { background-color: var(--text-secondary); color: var(--bg-primary); }
+
+.profile-divider {
+    border-top: 1px dashed #D1C8C5;
+    opacity: 0.7;
+}
+
+.profile-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #888888;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+}
+
+.btn-logout-full {
+    display: inline-block;
+    background-color: #FFF2F2;
+    color: #DC2626;
+    border-radius: 12px;
+    padding: 12px 0;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.btn-logout-full:hover {
+    background-color: #DC2626;
+    color: #FFFFFF;
+}
+
+/* --- RIGHT COLUMN: CONTENT CARD --- */
+.profile-content-card {
+    background-color: #FAFAFA;
+    border-radius: 24px;
+    padding: 30px;
+    border: 1px solid #F0ECE4;
+    box-shadow: 0 10px 30px rgba(76, 32, 19, 0.03);
+    height: 100%;
+}
+
+/* Table Riwayat Pesanan */
+.profile-table-minimal th {
+    color: #888;
+    border-bottom: 2px solid #E5E5E5;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.profile-table-minimal td {
+    vertical-align: middle;
+    padding: 15px 10px;
+}
+
+/* Badge Status Pemesanan Profesional */
+.order-status-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.status-pending { background-color: #FFF3CD; color: #856404; }
+.status-proses { background-color: #CCE5FF; color: #004085; }
+.status-selesai { background-color: #D4EDDA; color: #155724; }
+.status-batal { background-color: #F8D7DA; color: #721C24; }
+
+.btn-detail-pill {
+    background-color: var(--text-secondary);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.btn-detail-pill:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+/* --- ADMIN QUICK LINKS --- */
+.admin-quick-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EFEBE4;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.admin-quick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(76, 32, 19, 0.08);
+    border-color: var(--accent-third);
+}
+
+.admin-quick-card .icon-wrapper {
+    width: 45px;
+    height: 45px;
+    background-color: #FBF9F6;
+    color: var(--text-secondary);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    transition: background-color 0.2s;
+}
+
+.admin-quick-card:hover .icon-wrapper {
+    background-color: var(--bg-primary);
+}
+
+.admin-quick-card .text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-quick-card .title {
+    color: var(--text-secondary);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.admin-quick-card .desc {
+    color: #888888;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.admin-quick-card .arrow-icon {
+    color: #CCCCCC;
+    font-size: 1.2rem;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.admin-quick-card:hover .arrow-icon {
+    transform: translateX(4px);
+    color: var(--text-secondary);
+}
+
+.primary-action {
+    background-color: var(--text-secondary);
+}
+.primary-action .title, .primary-action .desc, .primary-action .arrow-icon {
+    color: #FFFFFF;
+}
+.primary-action .icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--bg-primary);
+}
+.primary-action:hover {
+    background-color: var(--bg-primary);
+}
+.primary-action:hover .title, .primary-action:hover .arrow-icon {
+    color: var(--text-secondary);
+}
+.primary-action:hover .desc {
+    color: rgba(76, 32, 19, 0.8);
+}
+.primary-action:hover .icon-wrapper {
+    background-color: var(--text-secondary);
+    color: #FFFFFF;
+}

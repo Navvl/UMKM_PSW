@@ -1,0 +1,124 @@
+/* --- ROOT VARIABLES --- */
+:root {
+    --bg-primary: #f8dc3d;
+    --text-secondary: #4c2013;
+    --accent-third: #f7cb9e;
+}
+
+/* --- BASE STYLING --- */
+.order-bg-clean {
+    background-color: #FFFFFF;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-secondary);
+}
+
+.order-main-title {
+    color: var(--text-secondary);
+    letter-spacing: -0.5px;
+}
+
+/* --- CARD MODERN --- */
+.order-card-modern {
+    background-color: #FAFAFA;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #F0ECE4;
+    box-shadow: 0 8px 24px rgba(76, 32, 19, 0.03);
+}
+
+/* --- TABLE STYLING --- */
+.order-table-minimal th {
+    color: #888;
+    border-bottom: 2px solid #E5E5E5;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.order-table-minimal td {
+    padding: 18px 10px;
+    vertical-align: middle;
+}
+
+.order-table-minimal tbody tr {
+    transition: background-color 0.2s;
+}
+
+.order-table-minimal tbody tr:hover {
+    background-color: #FFFFFF; /* Efek highlight saat baris disorot */
+}
+
+/* --- STATUS BADGES --- */
+.status-badge-order {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Warna standar e-commerce untuk status pesanan */
+.status-pending { 
+    background-color: #FFF3CD; 
+    color: #856404; 
+    border: 1px solid #FFEEBA;
+}
+.status-dikonfirmasi { 
+    background-color: #D4EDDA; 
+    color: #155724; 
+    border: 1px solid #C3E6CB;
+}
+.status-ditolak { 
+    background-color: #F8D7DA; 
+    color: #721C24; 
+    border: 1px solid #F5C6CB;
+}
+.status-selesai { 
+    background-color: #E2E3E5; 
+    color: #383D41; 
+}
+
+/* --- ACTION BUTTON --- */
+.btn-view-detail {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 2px solid var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.btn-view-detail i {
+    font-size: 1.1rem;
+    margin-left: 2px;
+    transition: transform 0.2s;
+}
+
+.btn-view-detail:hover {
+    background-color: var(--text-secondary);
+    color: #FFFFFF;
+}
+
+.btn-view-detail:hover i {
+    transform: translateX(3px); /* Efek panah geser saat dihover */
+}
+
+/* --- EMPTY STATE --- */
+.empty-state-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #F0ECE4;
+    color: #A3A3A3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 auto;
+}

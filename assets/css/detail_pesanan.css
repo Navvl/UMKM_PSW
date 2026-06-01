@@ -1,0 +1,142 @@
+/* --- ROOT VARIABLES (Fallback jika belum terbaca dari style.css) --- */
+:root {
+    --bg-primary: #f8dc3d;
+    --text-secondary: #4c2013;
+    --accent-third: #f7cb9e;
+}
+
+/* --- BASE STYLING --- */
+.detail-bg-clean {
+    background-color: #FFFFFF;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-secondary);
+}
+
+.detail-main-title {
+    color: var(--text-secondary);
+    letter-spacing: -0.5px;
+}
+
+/* --- CARD MODERN --- */
+.detail-card-modern {
+    background-color: #FAFAFA;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #F0ECE4;
+    box-shadow: 0 8px 24px rgba(76, 32, 19, 0.03);
+}
+
+.bg-admin-panel {
+    background-color: #FDFDFD;
+    border: 2px dashed #E5E5E5;
+}
+
+/* --- ORDER INFO LIST --- */
+.info-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* --- STATUS BADGES --- */
+.order-status-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+.status-pending { background-color: #FFF3CD; color: #856404; }
+.status-dikonfirmasi { background-color: #D4EDDA; color: #155724; }
+.status-ditolak { background-color: #F8D7DA; color: #721C24; }
+
+/* --- ITEMS TABLE (RECEIPT STYLE) --- */
+.item-table-minimal th {
+    border-bottom: 2px solid #E5E5E5;
+    padding-bottom: 12px;
+}
+
+.item-table-minimal td {
+    padding: 16px 8px;
+    vertical-align: middle;
+}
+
+.item-img-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-third);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.item-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- ADMIN ACTIONS & FORMS --- */
+.custom-select-admin {
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    box-shadow: none !important;
+    transition: border-color 0.2s;
+}
+
+.custom-select-admin:focus {
+    border-color: var(--text-secondary);
+}
+
+.btn-action-primary {
+    background-color: var(--text-secondary);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+
+.btn-action-primary:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-action-danger {
+    background-color: transparent;
+    color: #DC2626;
+    border: 2px solid #FFEAEA;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+
+.btn-action-danger:hover {
+    background-color: #FFEAEA;
+}   
