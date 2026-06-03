@@ -100,7 +100,7 @@ if (!$data) {
 }
 
 $details = mysqli_query($conn, "
-    SELECT order_detail.*, products.nama_product, products.gambar
+    SELECT order_detail.*, products.nama_product, products.gambar, products.categories
     FROM order_detail
     JOIN products ON order_detail.id_product = products.id_product
     WHERE order_detail.id_order='$id_order'
@@ -118,7 +118,6 @@ $details = mysqli_query($conn, "
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Panggil CSS Baru khusus Halaman Detail -->
     <link rel="stylesheet" href="assets/css/detail_pesanan.css">
 </head>
 
@@ -128,7 +127,6 @@ $details = mysqli_query($conn, "
 
 <div class="container pb-5" style="padding-top: 140px;">
 
-    <!-- Top Navigation / Header -->
     <div class="d-flex align-items-center gap-3 mb-4">
         <a href="Pesanan.php" class="text-dark fs-4 text-decoration-none" title="Back to Orders"><i class="bi bi-arrow-left"></i></a>
         <h3 class="fw-bold m-0 detail-main-title text-uppercase">Order Details <span class="text-muted">#<?= str_pad($id_order, 4, '0', STR_PAD_LEFT) ?></span></h3>
@@ -136,10 +134,8 @@ $details = mysqli_query($conn, "
 
     <div class="row g-4">
         
-        <!-- KOLOM KIRI: INFO ORDER & ADMIN PANEL -->
         <div class="col-lg-4">
             
-            <!-- Info Pesanan -->
             <div class="detail-card-modern mb-4">
                 <h5 class="fw-bold mb-4 border-bottom pb-3">Order Information</h5>
                 
@@ -170,7 +166,6 @@ $details = mysqli_query($conn, "
                 </div>
             </div>
 
-            <!-- Panel Admin (Hanya muncul untuk role admin) -->
             <?php if ($role == 'admin') { ?>
             <div class="detail-card-modern bg-admin-panel">
                 <h5 class="fw-bold mb-3"><i class="bi bi-sliders"></i> Manage Order</h5>
@@ -198,7 +193,6 @@ $details = mysqli_query($conn, "
 
         </div>
 
-        <!-- KOLOM KANAN: DAFTAR PRODUK (RECEIPT) -->
         <div class="col-lg-8">
             <div class="detail-card-modern h-100">
                 <h5 class="fw-bold mb-4 border-bottom pb-3">Items Ordered</h5>
@@ -226,7 +220,10 @@ $details = mysqli_query($conn, "
                                         <div class="item-img-wrapper">
                                             <img src="assets/img/<?= $d['gambar'] ?>" alt="<?= $d['nama_product'] ?>">
                                         </div>
-                                        <span class="fw-bold text-dark"><?= $d['nama_product'] ?></span>
+                                        <div>
+                                            <span class="category-badge-detail mb-1"><?= $d['categories'] ?? 'Unknown' ?></span>
+                                            <div class="fw-bold text-dark"><?= $d['nama_product'] ?></div>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="text-center">
@@ -240,7 +237,6 @@ $details = mysqli_query($conn, "
                     </table>
                 </div>
 
-                <!-- Bagian Total Harga -->
                 <div class="d-flex justify-content-end mt-4 pt-3 border-top border-2">
                     <div class="text-end">
                         <span class="text-uppercase fw-bold text-muted small">Total Amount</span>

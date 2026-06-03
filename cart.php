@@ -6,7 +6,6 @@ $is_login = isset($_SESSION['login']) && $_SESSION['login'] === true;
 $id_user = $is_login ? $_SESSION['id_user'] : null;
 $role = $is_login ? $_SESSION['role'] : 'guest';
 
-// Tendang paksa jika guest mencoba masuk halaman ini
 if ($role !== 'user') {
     header("Location: produk.php");
     exit;
@@ -53,7 +52,7 @@ if (isset($_POST['ajax_update_cart'])) {
     exit;
 }
 
-/* USER HAPUS ITEM (Tombol Silang) */
+/* USER HAPUS ITEM */
 if (isset($_GET['hapus_cart'])) {
     $id_product = $_GET['hapus_cart'];
     unset($_SESSION['cart'][$id_product]);
@@ -127,8 +126,11 @@ if (isset($_POST['checkout'])) {
                                     $subtotal = $item['harga'] * $jumlah;
                                     $total += $subtotal;
                             ?>
-                            <tr class="cart-row" id="row-<?= $id_product ?>">
-                                <td class="fw-bold text-dark fs-6"><?= $item['nama_product'] ?></td>
+                            <tr class="cart-row border-bottom" id="row-<?= $id_product ?>">
+                                <td>
+                                    <span class="category-badge-cart mb-1"><?= $item['categories'] ?></span>
+                                    <div class="fw-bold text-dark fs-6 mt-1"><?= $item['nama_product'] ?></div>
+                                </td>
                                 <td class="text-center align-middle">
                                     <div class="qty-control-cart mx-auto">
                                         <button type="button" class="qty-btn-cart" onclick="changeCartQty('<?= $id_product ?>', -1)">-</button>
@@ -168,6 +170,8 @@ if (isset($_POST['checkout'])) {
         </div>
     </div>
 </div>
+
+<?php include "components/footer.php"; ?>
 
 <script>
 function changeCartQty(productId, direction) {

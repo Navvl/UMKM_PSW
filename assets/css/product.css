@@ -275,3 +275,54 @@
     background-color: var(--bg-primary);
     color: var(--text-secondary);
 }
+
+/* --- CATEGORY FILTER BUTTONS --- */
+.category-filter-wrapper {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+}
+
+.category-filter-btn {
+    padding: 8px 24px;
+    border-radius: 50px;
+    background-color: #FAFAFA;
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 2px solid #EFEBE4;
+    transition: all 0.2s ease-in-out;
+}
+
+.category-filter-btn:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+.category-filter-btn.active {
+    background-color: var(--text-secondary);
+    color: var(--bg-primary);
+    border-color: var(--text-secondary);
+    box-shadow: 0 4px 10px rgba(76, 32, 19, 0.15);
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+    .category-filter-wrapper {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar */
+    }
+    .category-filter-wrapper::-webkit-scrollbar {
+        display: none; /* Hide scrollbar */
+    }
+    .category-filter-btn {
+        white-space: nowrap;
+    }
+}

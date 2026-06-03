@@ -9,9 +9,12 @@
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Menu</h5>
-                <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
-                <p><a href="#products" class="text-white text-decoration-none">Products</a></p>
-                <p><a href="#about" class="text-white text-decoration-none">About Us</a></p>
+                <p><a href="index.php" class="text-white text-decoration-none">Home</a></p>
+                <p><a href="produk.php" class="text-white text-decoration-none">Order</a></p>
+                <p><a href="pesanan.php" class="text-white text-decoration-none">Your Order</a></p>
+                <p><a href="contact.php" class="text-white text-decoration-none">Contact Us</a></p>
+                <p><a href="about_us.php" class="text-white text-decoration-none">About Us</a></p>
+
             </div>
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">

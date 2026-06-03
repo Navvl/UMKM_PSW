@@ -191,12 +191,12 @@ session_start();
 
             <div class="info-list">
                 <div>📍 <span>Batam, Indonesia</span></div>
-                <div>📞 <span>0812-3456-7890</span></div>
+                <div>📞 <span>0813-6136-7657</span></div>
                 <div>✉️ <span>bananago@gmail.com</span></div>
                 <div>⏰ <span>09.00 - 21.00</span></div>
             </div>
 
-            <a href="kirimwa.id/bananago.batam" class="wa-btn">
+            <a href="https://kirimwa.id/bananago.batam" class="wa-btn">
                 Chat WhatsApp
             </a>
         </div>
@@ -204,15 +204,19 @@ session_start();
         <div class="contact-card form-card">
             <h2>Kirim Pesan</h2>
 
-        <form action="Config/proses_contact.php" method="POST">
+            <form action="Config/proses_contact.php" method="POST">
 
     <input type="text" name="nama" placeholder="Nama kamu" required>
 
     <input type="email" name="email" placeholder="Email kamu" required>
 
-    <textarea name="pesan" placeholder="Tulis pesan kamu..." required></textarea>
+    <textarea id="pesan" name="pesan" placeholder="Tulis pesan kamu..." maxlength="200" required></textarea>
+    
+    <div id="charCount" style="text-align: right; font-size: 0.85rem; font-weight: 600; color: #4c2013; opacity: 0.7; margin-bottom: 10px;">
+        200 characters remaining
+    </div>
 
-    <button type="submit">
+    <button type="submit" id="btnSubmit">
         Send Message
     </button>
 
@@ -239,6 +243,25 @@ session_start();
 </section>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            const pesanInput = document.getElementById('pesan');
+            const charCount = document.getElementById('charCount');
+            const btnSubmit = document.getElementById('btnSubmit');
+
+            pesanInput.addEventListener('input', function () {
+                const maxLength = pesanInput.getAttribute('maxlength');
+                const currentLength = pesanInput.value.length;
+                const remaining = maxLength - currentLength; 
+
+                charCount.innerText = remaining + ' characters remaining';
+            });
+
+            const contactForm = document.querySelector('form');
+            contactForm.addEventListener('submit', function () {
+                btnSubmit.innerHTML = 'Sending...';
+                btnSubmit.disabled = true;
+            });
+        </script>
          <?php include 'components/footer.php'; ?>
 </body>
 </html>

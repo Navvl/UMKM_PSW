@@ -13,13 +13,14 @@ if (!isset($_SESSION['cart'])) {
 /* ADMIN TAMBAH PRODUK */
 if (isset($_POST['tambah_produk']) && $role == 'admin') {
     $nama_product = mysqli_real_escape_string($conn, $_POST['nama_product']);
+    $kategori = mysqli_real_escape_string($conn, $_POST['kategori']);
     $harga = $_POST['harga'];
     $stok = $_POST['stok'];
     $gambar = $_FILES['gambar']['name'];
     $tmp = $_FILES['gambar']['tmp_name'];
 
     move_uploaded_file($tmp, "assets/img/" . $gambar);
-    mysqli_query($conn, "INSERT INTO products(nama_product, harga, gambar, stok) VALUES('$nama_product', '$harga', '$gambar', '$stok')");
+    mysqli_query($conn, "INSERT INTO products(nama_product, categories, harga, gambar, stok) VALUES('$nama_product', '$kategori', '$harga', '$gambar', '$stok')");
     header("Location: produk.php");
     exit;
 }
@@ -28,6 +29,7 @@ if (isset($_POST['tambah_produk']) && $role == 'admin') {
 if (isset($_POST['update_produk']) && $role == 'admin') {
     $id_product = $_POST['id_product'];
     $nama_product = mysqli_real_escape_string($conn, $_POST['nama_product']);
+    $kategori = mysqli_real_escape_string($conn, $_POST['kategori']);
     $harga = $_POST['harga'];
     $stok = $_POST['stok'];
 
@@ -35,9 +37,9 @@ if (isset($_POST['update_produk']) && $role == 'admin') {
         $gambar = $_FILES['gambar']['name'];
         $tmp = $_FILES['gambar']['tmp_name'];
         move_uploaded_file($tmp, "assets/img/" . $gambar);
-        mysqli_query($conn, "UPDATE products SET nama_product='$nama_product', harga='$harga', stok='$stok', gambar='$gambar' WHERE id_product='$id_product'");
+        mysqli_query($conn, "UPDATE products SET nama_product='$nama_product', categories='$kategori', harga='$harga', stok='$stok', gambar='$gambar' WHERE id_product='$id_product'");
     } else {
-        mysqli_query($conn, "UPDATE products SET nama_product='$nama_product', harga='$harga', stok='$stok' WHERE id_product='$id_product'");
+        mysqli_query($conn, "UPDATE products SET nama_product='$nama_product', categories='$kategori', harga='$harga', stok='$stok' WHERE id_product='$id_product'");
     }
     header("Location: produk.php");
     exit;
@@ -65,7 +67,15 @@ if (isset($_POST['add_cart']) && $role == 'user') {
     exit;
 }
 
-$products = mysqli_query($conn, "SELECT * FROM products ORDER BY id_product DESC");
+$active_category = isset($_GET['kategori']) ? $_GET['kategori'] : 'All';
+
+if ($active_category != 'All') {
+    $safe_category = mysqli_real_escape_string($conn, $active_category);
+    $products = mysqli_query($conn, "SELECT * FROM products WHERE categories='$safe_category' ORDER BY id_product DESC");
+} else {
+    $products = mysqli_query($conn, "SELECT * FROM products ORDER BY id_product DESC");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -92,25 +102,37 @@ $products = mysqli_query($conn, "SELECT * FROM products ORDER BY id_product DESC
     <?php if ($role == 'admin') { ?>
         <div class="admin-panel-clean mb-5">
             <h5 class="fw-bold mb-4 d-flex align-items-center gap-2"><i class="bi bi-box-seam"></i> Add New Product</h5>
-            <form method="POST" enctype="multipart/form-data" class="row g-4 align-items-end">
-                <div class="col-md-3">
+            <form method="POST" enctype="multipart/form-data" class="row g-3 align-items-end">
+                <div class="col-lg-3 col-md-4">
                     <label class="form-label admin-label">Product Name</label>
                     <input type="text" name="nama_product" class="form-control admin-input" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-2 col-md-4">
+                    <label class="form-label admin-label">Category</label>
+                    <select name="kategori" class="form-select admin-input" required>
+                        <option value="" disabled selected>Select...</option>
+                        <option value="Cheese">Cheese</option>
+                        <option value="Chocolate">Chocolate</option>
+                        <option value="Matcha">Matcha</option>
+                        <option value="Mix">Mix</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Sop Buah">Sop Buah</option>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-4">
                     <label class="form-label admin-label">Price (Rp)</label>
                     <input type="number" name="harga" class="form-control admin-input" required>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-1 col-md-3">
                     <label class="form-label admin-label">Stock</label>
                     <input type="number" name="stok" class="form-control admin-input" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <label class="form-label admin-label">Image</label>
                     <input type="file" name="gambar" class="form-control admin-input" required>
                 </div>
-                <div class="col-md-1">
-                    <button type="submit" name="tambah_produk" class="btn-admin-submit w-100"><i class="bi bi-plus-lg"></i></button>
+                <div class="col-lg-1 col-md-3">
+                    <button type="submit" name="tambah_produk" class="btn-admin-submit w-100" title="Add Product"><i class="bi bi-plus-lg"></i></button>
                 </div>
             </form>
         </div>
@@ -127,33 +149,58 @@ $products = mysqli_query($conn, "SELECT * FROM products ORDER BY id_product DESC
                 <h5 class="fw-bold m-0"><i class="bi bi-pencil-square"></i> Edit Product</h5>
                 <a href="produk.php" class="btn-cancel-icon"><i class="bi bi-x-lg"></i></a>
             </div>
-            <form method="POST" enctype="multipart/form-data" class="row g-4 align-items-end">
+            <form method="POST" enctype="multipart/form-data" class="row g-3 align-items-end">
                 <input type="hidden" name="id_product" value="<?= $data['id_product'] ?>">
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-4">
                     <label class="form-label admin-label">Product Name</label>
                     <input type="text" name="nama_product" class="form-control admin-input" value="<?= $data['nama_product'] ?>" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-2 col-md-4">
+                    <label class="form-label admin-label">Category</label>
+                    <select name="kategori" class="form-select admin-input" required>
+                        <?php
+                        $kategori_enum = ['Cheese', 'Chocolate', 'Matcha', 'Mix', 'Drinks', 'Sop Buah'];
+                        foreach ($kategori_enum as $k) {
+                            $selected = ($data['categories'] == $k) ? 'selected' : '';
+                            echo "<option value='$k' $selected>$k</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-lg-2 col-md-4">
                     <label class="form-label admin-label">Price (Rp)</label>
                     <input type="number" name="harga" class="form-control admin-input" value="<?= $data['harga'] ?>" required>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-1 col-md-3">
                     <label class="form-label admin-label">Stock</label>
                     <input type="number" name="stok" class="form-control admin-input" value="<?= $data['stok'] ?>" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <input type="file" name="gambar" class="form-control admin-input">
                 </div>
-                <div class="col-md-1">
-                    <button type="submit" name="update_produk" class="btn-admin-submit w-100"><i class="bi bi-check2"></i></button>
+                <div class="col-lg-1 col-md-3">
+                    <button type="submit" name="update_produk" class="btn-admin-submit w-100" title="Save Changes"><i class="bi bi-check2"></i></button>
                 </div>
             </form>
         </div>
         <?php } } ?>
     <?php } ?>
 
+    <div class="category-filter-wrapper">
+        <?php
+        $categories_list = ['All', 'Cheese', 'Chocolate', 'Matcha', 'Mix', 'Drinks', 'Sop Buah'];
+        foreach ($categories_list as $cat) {
+            $active_class = ($active_category == $cat) ? 'active' : '';
+            echo "<a href='produk.php?kategori=$cat' class='category-filter-btn $active_class'>$cat</a>";
+        }
+        ?>
+    </div>
+
     <div class="row g-4">
-        <?php while ($p = mysqli_fetch_assoc($products)) { ?>
+        <?php 
+        if (mysqli_num_rows($products) > 0) {
+            while ($p = mysqli_fetch_assoc($products)) { 
+        ?>
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
             <div class="product-card-modern">
                 <div class="card-img-wrapper">
@@ -162,6 +209,11 @@ $products = mysqli_query($conn, "SELECT * FROM products ORDER BY id_product DESC
                     <?php if($p['stok'] == 0) { echo '<span class="status-badge-clean danger">Sold Out</span>'; } ?>
                 </div>
                 <div class="card-body-content">
+                    
+                    <div class="mb-2">
+                        <span class="category-badge-pill"><?= $p['categories'] ?></span>
+                    </div>
+
                     <div class="d-flex justify-content-between align-items-baseline mb-2">
                         <h3 class="product-name"><?= $p['nama_product'] ?></h3>
                         <span class="product-price">Rp <?= number_format($p['harga'], 0, ',', '.') ?></span>
@@ -199,6 +251,15 @@ $products = mysqli_query($conn, "SELECT * FROM products ORDER BY id_product DESC
                 </div>
             </div>
         </div>
+        <?php 
+            }
+        } else { 
+        ?>
+            <div class="col-12 text-center py-5 my-4">
+                <i class="bi bi-basket-fill text-muted" style="font-size: 4rem; opacity: 0.3;"></i>
+                <h4 class="fw-bold mt-3 text-muted">No Products Found</h4>
+                <p class="text-muted">We currently don't have any items in the "<?= $active_category ?>" category.</p>
+            </div>
         <?php } ?>
     </div>
 </div>

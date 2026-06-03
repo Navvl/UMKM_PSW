@@ -1,4 +1,3 @@
-/* --- ROOT COLORS (Memastikan variabel bawaan aktif) --- */
 :root {
     --bg-primary: #f8dc3d;
     --text-secondary: #4c2013;
@@ -17,7 +16,7 @@
     letter-spacing: -1px;
 }
 
-/* --- LEFT COLUMN: PROFILE CARD --- */
+/* --- PROFILE CARD --- */
 .profile-card-modern {
     background-color: #FAFAFA;
     border-radius: 24px;
@@ -97,7 +96,7 @@
     color: #FFFFFF;
 }
 
-/* --- RIGHT COLUMN: CONTENT CARD --- */
+/* --- CONTENT CARD --- */
 .profile-content-card {
     background-color: #FAFAFA;
     border-radius: 24px;
@@ -120,7 +119,6 @@
     padding: 15px 10px;
 }
 
-/* Badge Status Pemesanan Profesional */
 .order-status-badge {
     font-size: 0.7rem;
     font-weight: 800;

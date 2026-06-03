@@ -103,3 +103,15 @@
     transform: translateY(-2px);
     box-shadow: 6px 6px 0px rgba(76, 32, 19, 0.15);
 }
+
+.category-badge-cart {
+    font-size: 0.6rem;
+    font-weight: 800;
+    background-color: var(--text-secondary);
+    color: var(--bg-primary); 
+    padding: 3px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}

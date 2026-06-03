@@ -42,7 +42,6 @@ if ($role == 'admin') {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Panggil CSS Baru khusus Halaman Pesanan -->
     <link rel="stylesheet" href="assets/css/pesanan.css">
 </head>
 
@@ -94,7 +93,6 @@ if ($role == 'admin') {
                     ?>
                     <tr class="border-bottom">
                         
-                        <!-- Order ID Format -->
                         <td class="fw-bold text-dark">
                             #<?= str_pad($row['id_order'], 4, '0', STR_PAD_LEFT) ?>
                         </td>
@@ -105,12 +103,10 @@ if ($role == 'admin') {
                             </td>
                         <?php } ?>
 
-                        <!-- Format Tanggal Rapi -->
                         <td class="text-muted small">
                             <i class="bi bi-clock me-1"></i> <?= date('d M Y, H:i', strtotime($row['created_at'])) ?>
                         </td>
 
-                        <!-- Potong text catatan jika terlalu panjang biar tabel ga rusak -->
                         <td class="text-muted small">
                             <?= empty($row['catatan']) ? '-' : (strlen($row['catatan']) > 25 ? substr($row['catatan'], 0, 25).'...' : $row['catatan']) ?>
                         </td>

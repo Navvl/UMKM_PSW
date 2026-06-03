@@ -44,7 +44,7 @@
 }
 
 .order-table-minimal tbody tr:hover {
-    background-color: #FFFFFF; /* Efek highlight saat baris disorot */
+    background-color: #FFFFFF; /
 }
 
 /* --- STATUS BADGES --- */
@@ -58,7 +58,6 @@
     display: inline-block;
 }
 
-/* Warna standar e-commerce untuk status pesanan */
 .status-pending { 
     background-color: #FFF3CD; 
     color: #856404; 
@@ -106,10 +105,9 @@
 }
 
 .btn-view-detail:hover i {
-    transform: translateX(3px); /* Efek panah geser saat dihover */
+    transform: translateX(3px);
 }
 
-/* --- EMPTY STATE --- */
 .empty-state-icon {
     width: 80px;
     height: 80px;
