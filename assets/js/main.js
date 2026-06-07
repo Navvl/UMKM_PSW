@@ -1,51 +1,4 @@
-// =====================================================
-// ================= LOAD FOOTER ========================
-// =====================================================
-
-async function loadComponent(elementId, filePath) {
-    try {
-        const response = await fetch(filePath);
-
-        if (!response.ok) {
-            throw new Error(`Failed to load component from ${filePath}`);
-        }
-
-        const html = await response.text();
-
-        const element = document.getElementById(elementId);
-
-        if (element) {
-            element.innerHTML = html;
-        }
-
-    } catch (error) {
-        console.error('Component loading error:', error.message);
-
-        const element = document.getElementById(elementId);
-
-        if (element) {
-            element.innerHTML = `
-                <div class="alert alert-danger">
-                    Error: Failed to load UI component.
-                </div>
-            `;
-        }
-    }
-}
-
-// Footer only
-document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('footer-placeholder', 'components/footer.html');
-});
-
-
-
-
-
-// =====================================================
-// ================= HOME PRODUCT CARD =================
-// =====================================================
-
+// ================= HOME PRODUCT CARDDDDDDDDD=================
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById('productPreviewStack');
@@ -158,14 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoPlay();
 });
 
-
-
-
-
-
-// =====================================================
-// ================= STICKY NAVBAR =====================
-// =====================================================
+// ================= STICKY NAVBARRRRRRRRRr =====================
 
 const initStickyNavbar = () => {
 

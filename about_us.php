@@ -1,3 +1,4 @@
+```php
 <?php
 session_start();
 ?>
@@ -20,6 +21,7 @@ session_start();
 </head>
 
 <body>
+
 <?php include "components/navbar.php"; ?>
 
 <!-- HERO ABOUT -->
@@ -36,10 +38,10 @@ session_start();
                     <div class="stagger-line"><span>ARE ?</span></div>
                 </div>
 
-                <p class="mt-4" style="color: var(--text-secondary); font-weight:500;">
-                    Banana Go hadir untuk menghadirkan pengalaman baru dalam menikmati 
-                    <strong>pisang cokelat kekinian</strong>. Kami menggabungkan bahan 
-                    berkualitas, inovasi rasa, dan pelayanan cepat untuk menciptakan 
+                <p class="mt-4" style="color: var(--text-secondary); font-weight:500; ">
+                    Banana Go hadir untuk menghadirkan pengalaman baru dalam menikmati
+                    <strong>pisang cokelat kekinian</strong>. Kami menggabungkan bahan
+                    berkualitas, inovasi rasa, dan pelayanan cepat untuk menciptakan
                     street food yang tidak hanya enak, tapi juga memorable.
                 </p>
 
@@ -55,7 +57,7 @@ session_start();
                     display: inline-block;
                     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
                 ">
-                    <img src="assets/img/home/model3.webp" 
+                    <img src="assets/img/home/model3.webp"
                          style="width:300px; border-radius:20px;">
                 </div>
             </div>
@@ -79,22 +81,55 @@ session_start();
     </div>
 </section>
 
-<!-- ABOUT DETAIL -->
+<!-- OUR HISTORY -->
 <section class="about-section">
+    <div class="container text-center">
+        <h2 class="brand-heading">Our History</h2>
+
+        <p class="brand-description" style="text-align: justify;">
+            Banana Go lahir dari kecintaan terhadap jajanan tradisional Indonesia,
+            khususnya pisang cokelat yang telah lama menjadi camilan favorit masyarakat.
+            Berawal dari sebuah ide sederhana untuk menghadirkan camilan yang akrab di
+            lidah masyarakat dengan tampilan dan cita rasa yang lebih modern, Banana Go
+            mulai dikembangkan sebagai brand yang mengutamakan kualitas, kreativitas,
+            dan kepuasan pelanggan.
+        </p>
+
+        <p class="brand-description mt-3" style="text-align: justify;">
+            Perjalanan Banana Go dimulai di Batam dengan visi untuk menghadirkan
+            street food yang tidak hanya lezat, tetapi juga mampu memberikan pengalaman
+            yang menyenangkan bagi setiap pelanggan. Berbagai percobaan resep,
+            pemilihan bahan baku terbaik, hingga pengembangan varian topping dilakukan
+            untuk menciptakan produk yang memiliki karakter unik dan berbeda dari
+            pisang cokelat pada umumnya.
+        </p>
+
+        <p class="brand-description mt-3" style="text-align: justify;">
+            Seiring berjalannya waktu, Banana Go terus berkembang dengan menghadirkan
+            inovasi rasa, peningkatan kualitas pelayanan, dan pengalaman pelanggan
+            yang lebih baik. Nama Banana Go sendiri melambangkan semangat untuk terus
+            bergerak maju, berinovasi, dan berkembang mengikuti kebutuhan masyarakat
+            modern tanpa melupakan cita rasa khas yang menjadi identitas utama produk.
+        </p>
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="about-section mt-5 pt-4">
     <div class="container text-center">
         <h2 class="brand-heading">Our Story</h2>
 
-        <p class="brand-description">
-            Berawal dari kecintaan terhadap jajanan tradisional, 
-            <span class="highlight">Banana Go</span> berkembang menjadi brand 
+        <p class="brand-description" style="text-align: justify;">
+            Berawal dari kecintaan terhadap jajanan tradisional,
+            <span class="highlight">Banana Go</span> berkembang menjadi brand
             yang menghadirkan inovasi pisang cokelat dengan berbagai topping modern.
-            Kami percaya bahwa makanan sederhana bisa menjadi luar biasa jika dibuat 
+            Kami percaya bahwa makanan sederhana bisa menjadi luar biasa jika dibuat
             dengan passion dan kualitas terbaik.
         </p>
 
-        <p class="brand-description mt-3">
-            Dari Batam untuk semua pecinta street food Indonesia, kami terus berkembang 
-            dengan menghadirkan rasa baru, pelayanan terbaik, dan pengalaman yang 
+        <p class="brand-description mt-3" style="text-align: justify;">
+            Dari Batam untuk semua pecinta street food Indonesia, kami terus berkembang
+            dengan menghadirkan rasa baru, pelayanan terbaik, dan pengalaman yang
             menyenangkan di setiap gigitan.
         </p>
     </div>
@@ -129,7 +164,6 @@ session_start();
 
 <!-- FOOTER -->
 <?php include "components/footer.php"; ?>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/main.js"></script>

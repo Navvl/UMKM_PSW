@@ -34,7 +34,6 @@ if(isset($_SESSION['role']) && $_SESSION['role'] == 'user' && isset($_SESSION['c
 <?php if(isset($_SESSION['login']) && $_SESSION['login'] === true): ?>
 
     <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'user'): ?>
-        <!-- ICON CART KHUSUS USER -->
         <a href="cart.php" class="nav-icon-btn position-relative" title="View Cart">
             <i class="bi bi-bag-fill"></i>
             <?php if($cart_count > 0): ?>
@@ -43,7 +42,6 @@ if(isset($_SESSION['role']) && $_SESSION['role'] == 'user' && isset($_SESSION['c
         </a>
     <?php endif; ?>
 
-    <!-- REVISI: BUTTON PROFIL DIUBAH JADI ICON MURNI COY -->
     <a href="profil.php" class="nav-icon-btn" title="My Profile">
         <i class="bi bi-person-circle"></i>
     </a>

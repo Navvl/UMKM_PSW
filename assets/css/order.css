@@ -17,14 +17,14 @@
     gap: 30px;
 }
 
-/* --- Styling Card Baru (Mirip Gambar 2) --- */
+/* --- Styling Card --- */
 .product-card-modern {
-    background-color: #F8F4E6; /* Warna cream soft */
+    background-color: #F8F4E6;
     border-radius: 24px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03); /* Shadow super halus */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03); 
     transition: transform 0.3s ease;
     border: 1px solid rgba(0,0,0,0.02);
 }
@@ -47,10 +47,9 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    mix-blend-mode: multiply; /* Rahasia biar BG putih foto nyatu sama card cream */
+    mix-blend-mode: multiply; 
 }
 
-/* --- Tipografi Konten --- */
 .product-card-content {
     display: flex;
     flex-direction: column;
@@ -71,12 +70,11 @@
     margin-bottom: 15px;
 }
 
-/* --- Layout Harga, Input, dan Tombol (Flexbox) --- */
 .product-action-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: auto; /* Dorong ke paling bawah card */
+    margin-top: auto; 
 }
 
 .price-qty-group {
@@ -102,7 +100,7 @@
     outline: none;
 }
 
-/* --- Styling Tombol Order (Kuning Distro) --- */
+/* --- Styling Tombol Order (Kuning Kuning) --- */
 .btn-order-yellow {
     background-color: var(--bg-primary, #FFD100); 
     color: var(--text-secondary);

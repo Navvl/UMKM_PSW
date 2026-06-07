@@ -78,14 +78,12 @@ session_start();
         <div class="container my-4">
             <div class="row align-items-center justify-content-between g-5">
                 
-                <!-- Sisi Kiri: Gambar Persegi Berbingkai -->
                 <div class="col-lg-5">
                     <div class="about-img-box">
                         <img src="assets/img/home/about-piscok.webp" alt="Banana Go Quality">
                     </div>
                 </div>
 
-                <!-- Sisi Kanan: Konten Teks -->
                 <div class="col-lg-6">
                     <div class="about-content">
                         <h4 class="about-subtitle">About Us</h4>
@@ -125,22 +123,18 @@ session_start();
     </section>
 
     <!-- TESTIMONIAL SECTION -->
-    <!-- NEW SECTION: TESTIMONIALS (WAVY & YELLOW BACKGROUND) -->
     <section id="testimonials" class="testimonials-section-wavy">
         
-        <!-- Gelombang Atas (Menyatu dengan warna section Why Banana) -->
+        <!-- Gelombang Atas -->
         <div class="wave-divider wave-top">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
                 <path fill="#FFFFFF" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
             </svg>
         </div>
 
-        <!-- Konten Utama Testimoni -->
         <div class="container testi-container-wavy position-relative z-2">
             
-            <!-- Headers & Badge -->
             <div class="text-center mb-5 pb-3">
-                <!-- Subtitle pakai warna cokelat distro -->
                 <h4 class="about-subtitle text-secondary-brand">Testimonials</h4>
                 <h2 class="brand-heading-premium">What Our <span class="highlight-white-clean">Customers</span> Say</h2>
             </div>
@@ -154,7 +148,7 @@ session_start();
                 </div>
             </div>
 
-            <!-- Testimonial Cards (Minimalist White) -->
+            <!-- Testimonial Cards -->
             <div class="row g-4 justify-content-center">
                 
                 <!-- Card 1 -->
@@ -217,7 +211,7 @@ session_start();
             </div>
         </div>
 
-        <!-- Gelombang Bawah (Menyatu dengan warna Footer #FAFAFA) -->
+        <!-- Gelombang Bawah -->
         <div class="wave-divider wave-bottom">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
                 <path fill="#FAFAFA" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -225,7 +219,7 @@ session_start();
         </div>
     </section>
 
-    <!-- NEW SECTION: WHY BANANA GO? (COMPACT Z-PATTERN) -->
+    <!-- WHY BANANA GO? -->
     <section id="why-banana" class="why-section-clean py-4">
         <div class="container">
             <div class="text-center mb-4">
@@ -233,7 +227,7 @@ session_start();
                 <h2 class="brand-heading-premium">Why <span class="about-highlight-clean">Banana Go?</span></h2>
             </div>
 
-            <!-- Block 1: Cheese Guy (Image Left, Text Right) -->
+            <!-- Block 1 -->
             <div class="row align-items-center mb-4 why-row justify-content-center gap-lg-4">
                 <div class="col-lg-4 mb-3 mb-lg-0">
                     <div class="why-img-wrapper">
@@ -248,7 +242,7 @@ session_start();
                 </div>
             </div>
 
-            <!-- Block 2: Matcha Girl (Text Left, Image Right) -->
+            <!-- Block 2 -->
             <div class="row align-items-center why-row flex-lg-row-reverse justify-content-center gap-lg-4">
                 <div class="col-lg-4 mb-3 mb-lg-0">
                     <div class="why-img-wrapper">

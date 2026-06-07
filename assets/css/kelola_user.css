@@ -1,11 +1,9 @@
-/* --- ROOT VARIABLES --- */
 :root {
     --bg-primary: #f8dc3d;
     --text-secondary: #4c2013;
     --accent-third: #f7cb9e;
 }
 
-/* --- BASE STYLING --- */
 .kelola-bg-clean {
     background-color: #FFFFFF;
     font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -68,13 +66,12 @@
     color: var(--bg-primary);
 }
 
-/* --- FORM ELEMENTS (SELECT & BUTTON) --- */
 .kelola-select {
     width: auto;
     min-width: 110px;
     border: 2px solid #E5E5E5;
     border-radius: 10px;
-    padding: 6px 30px 6px 12px; /* Ruang untuk panah dropdown */
+    padding: 6px 30px 6px 12px; 
     font-weight: 600;
     font-size: 0.85rem;
     color: var(--text-secondary);

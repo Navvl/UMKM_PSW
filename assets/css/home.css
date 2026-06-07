@@ -1,13 +1,12 @@
 /* LANDING PAGE DEPANNN */
 .hero-section {
-    position: relative; /* Wajib blay */
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: flex-start; 
-    /* Kasih padding top agar tidak nabrak navbar, sesuaikan angkanya (misal 120px) */
     padding-top: 50px;
-    background-color: var(--bg-primary); /* Si kuning */
-    overflow: hidden; /* Biar wave yang keluar dikit gak bikin scrollbar */
+    background-color: var(--bg-primary);
+    overflow: hidden;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
 }
@@ -30,42 +29,37 @@
 }
 
 .hero-wave .shape-fill {
-    /* Samakan dengan warna background pattern pisang kamu */
     fill: #fde88a; 
 }
 
 .waves {
     position: relative;
     width: 100%;
-    height: 100px; /* Tinggi gelombang */
+    height: 100px;
     min-height: 80px;
     max-height: 150px;
 }
 
-/* Penjadwalan Gerak Parallax */
 .parallax > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
 }
 
-/* Gelombang 1: Paling lambat (belakang) */
 .parallax > use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
 }
 
-/* Gelombang 2: Sedang */
 .parallax > use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
 }
 
-/* Gelombang 3: Paling cepat (solid white) */
 .parallax > use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
 }
 
-/* Keyframes Gerakan Horizontal */
+/* Keyframes Horizontal */
 @keyframes move-forever {
     0% {
         transform: translate3d(-90px, 0, 0);
@@ -75,7 +69,7 @@
     }
 }
 
-/* Responsive: Kecilkan tinggi gelombang di HP */
+/* Responsive HP */
 @media (max-width: 768px) {
     .waves {
         height: 40px;
@@ -83,9 +77,7 @@
     }
 }
 
-/* --- Fix Text Alignment --- */
 .hero-text-content {
-    /* Pastikan teks sejajar container */
     padding-left: 0; 
 }
 
@@ -93,7 +85,7 @@
     min-height: 80vh !important;
 }
 
-/* --- LAYER 1: BG TEXT (Nempel Tembok) --- */
+/* --- LAYER 1 --- */
 .hero-bg-text {
     position: absolute;
     top: 50%; left: 50%;
@@ -101,7 +93,7 @@
     width: 100vw;
     font-size: 25vw;
     font-weight: 950;
-    color: var(--text-secondary); /* #4c2013 (Cokelat) */
+    color: var(--text-secondary);
     opacity: 0.05;
     white-space: nowrap;
     z-index: 0;
@@ -140,14 +132,14 @@
 }
 
 .product-title-wrapper {
-    height: 50px; /* Jaga ruang agar konten di bawah tidak goyang */
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .active-product-title {
-    color: var(--text-secondary); /* #4c2013 */
+    color: var(--text-secondary); 
     font-size: 2.2rem;
     font-weight: 950;
     text-transform: uppercase;
@@ -158,7 +150,6 @@
     font-family: 'Super Kidpop', sans-serif;
 }
 
-/* State saat sedang fade (transisi) */
 .title-fade {
     opacity: 0;
     transform: translateY(-10px);
@@ -169,8 +160,8 @@
     width: 300px;
     aspect-ratio: 3/4;
     border-radius: 24px;
-    background: white; /* Base untuk border putih blay */
-    border: 15px solid white; /* Border putih tebal sesuai mau lu blay */
+    background: white; 
+    border: 15px solid white; 
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
@@ -185,7 +176,7 @@
     object-fit: cover;
 }
 
-/* --- STATE: CENTER (Utama) --- */
+/* --- STATE: CENTER --- */
 .floating-card.active-center {
     opacity: 1;
     z-index: 10;
@@ -194,11 +185,11 @@
     filter: blur(0);
 }
 
-/* --- STATE: LEFT & RIGHT (Numpuk/Ngintip) --- */
+/* --- STATE: LEFT & RIGHT --- */
 .floating-card.active-left {
     opacity: 0.6;
     z-index: 5;
-    transform: translate(-60px, 0) scale(0.9) rotate(-10deg); /* Lebih lebar dikit blay */
+    transform: translate(-60px, 0) scale(0.9) rotate(-10deg);
     filter: blur(4px);
 }
 
@@ -209,14 +200,13 @@
     filter: blur(4px);
 }
 
-/* --- HOVER: MEKAR LURUS blay --- */
+/* --- HOVER: MEKAR LURUS --- */
 .modern-stack-container:hover .floating-card.active-center {
     transform: translate(0, -30px) scale(1.1);
 }
 
 .modern-stack-container:hover .floating-card.active-left {
     opacity: 0.4;
-    /* Setengah transparan & setengah blur blay */
     transform: translate(-250px, 0) scale(0.85) rotate(0deg);
     filter: blur(8px);
 }
@@ -227,7 +217,7 @@
     filter: blur(8px);
 }
 
-/* Keyframe Animasi Kocok (Shuffle) */
+/* Keyframe Animasi Kocok */
 @keyframes cardShuffle {
     0% { transform: translate(0, 0) scale(1.05); }
     50% { transform: translate(150px, -50px) scale(0.8) rotate(15deg); z-index: 1; }
@@ -240,13 +230,13 @@
 
 .stack-pagination {
     position: absolute;
-    bottom: -40px; /* Jarak di bawah foto */
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     display: flex;
     gap: 12px;
     padding: 8px 20px;
-    background: rgba(255, 255, 255, 0.4); /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.4); 
     backdrop-filter: blur(10px);
     border-radius: 50px;
     opacity: 0;
@@ -255,7 +245,6 @@
     z-index: 20;
 }
 
-/* Trigger Muncul saat Hover blay */
 .modern-stack-container:hover .stack-pagination {
     opacity: 1;
     visibility: visible;
@@ -267,7 +256,7 @@
     height: 35px;
     border: none;
     background: transparent;
-    color: var(--text-secondary); /* #4c2013 */
+    color: var(--text-secondary);
     font-weight: 800;
     font-size: 0.9rem;
     border-radius: 50%;
@@ -282,15 +271,12 @@
     background: rgba(76, 32, 19, 0.1);
 }
 
-/* Warna Aktif Kuning blay */
 .btn-page.active {
-    background-color: var(--bg-primary); /* #f8dc3d */
+    background-color: var(--bg-primary);
     color: var(--text-secondary);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transform: scale(1.1);
 }
-
-
 
 
 /* BUTTON DEPAN */
@@ -305,12 +291,10 @@
     display: inline-block;
     border: none;
     margin-top: 10px;
-    
-    /* Animasi Masuk */
     opacity: 0;
     transform: translateY(30px);
     animation: btnReveal 0.8s ease forwards;
-    animation-delay: 1.8s; /* Muncul setelah teks selesai animasi */
+    animation-delay: 1.8s;
     transition: all 0.3s ease;
 }
 
@@ -340,7 +324,7 @@
 }
 
 .stagger-line {
-    width: fit-content; /* Biar kotak cokelatnya pas seukuran teks */
+    width: fit-content; 
     position: relative;
     font-size: 4rem;
     font-weight: 900;
@@ -413,7 +397,7 @@
 
 /* --- ABOUT SECTION PREMIUM (CLEAN COCKTAIL) --- */
 .about-section-premium {
-    background-color: #FFFFFF; /* Latar belakang putih bersih */
+    background-color: #FFFFFF;
     color: var(--text-secondary); 
     padding: 0; 
     overflow: hidden;
@@ -428,18 +412,17 @@
     z-index: 2;
 }
 
-/* Wadah Gambar Persegi */
 .about-img-box {
     position: relative;
     width: 100%;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(76, 32, 19, 0.08); /* Efek shadow untuk memisahkan gambar dari background putih */
+    box-shadow: 0 15px 35px rgba(76, 32, 19, 0.08);
 }
 
 .about-img-box img {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Memaksa rasio gambar menjadi kotak persegi sempurna */
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
 }
@@ -460,16 +443,16 @@
     color: var(--text-secondary);
 }
 
-/* Highlight kuning bersih TANPA border hitam */
+/* Highlight kuning bersih */
 .about-highlight-clean {
     font-weight: 900;
     color: var(--text-secondary);
-    background-color: var(--bg-primary); /* Blok warna kuning murni */
+    background-color: var(--bg-primary);
     padding: 2px 18px;
-    border: none !important; /* Menghilangkan border */
+    border: none !important; 
     display: inline-block;
     transform: rotate(-1deg); 
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.08); /* Efek shadow tipis agar tetap pop out */
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.08); 
 }
 
 .brand-description-premium {
@@ -507,12 +490,12 @@
     box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
 }
 
-/* --- STYLING BUTTON ORDER NOW PREMIUM --- */
+/* --- STYLING BUTTON ORDER NOW --- */
 .btn-about-order {
-    background-color: var(--text-secondary); /* Warna dasar cokelat distro */
-    color: var(--bg-primary) !important; /* Teks kuning kontras */
+    background-color: var(--text-secondary); 
+    color: var(--bg-primary) !important;
     padding: 14px 35px;
-    border-radius: 14px; /* Gaya semi-kotak tegas khas distro */
+    border-radius: 14px;
     font-weight: 800;
     font-size: 1.1rem;
     text-decoration: none;
@@ -520,7 +503,7 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border: 3px solid var(--text-secondary);
-    box-shadow: 5px 5px 0px #000000; /* Shadow tebal padat */
+    box-shadow: 5px 5px 0px #000000;
     transition: all 0.2s ease-in-out;
 }
 
@@ -530,14 +513,14 @@
 
 /* Efek Hover Interaktif */
 .btn-about-order:hover {
-    background-color: var(--bg-primary); /* Tukar warna saat di-hover */
+    background-color: var(--bg-primary);
     color: var(--text-secondary) !important;
-    transform: translate(-2px, -2px); /* Efek tombol terangkat */
+    transform: translate(-2px, -2px);
     box-shadow: 7px 7px 0px #000000;
 }
 
 .btn-about-order:hover i {
-    transform: translateX(5px); /* Animasi panah geser sedikit ke kanan */
+    transform: translateX(5px);
 }
 
 /* --- Responsif Mobile --- */
@@ -561,7 +544,6 @@
 
 
 /* WHY SECTION */
-/* --- NEW SECTION: WHY BANANA GO? --- */
 .why-section-clean {
     background-color: #FFFFFF;
 }
@@ -576,12 +558,12 @@
     border-radius: 20px;
     overflow: hidden;
     z-index: 2;
-    box-shadow: 0 10px 25px rgba(76, 32, 19, 0.08); /* Bayangan sedikit diperhalus agar elemen tidak terkesan melayang berlebihan */
+    box-shadow: 0 10px 25px rgba(76, 32, 19, 0.08); 
 }
 
 .why-img-wrapper img {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Dikembalikan ke proporsi portrait yang pas tanpa crop berlebihan */
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -601,20 +583,17 @@
 }
 
 /* TESTIMONI SECTION */
-/* --- WAVY TESTIMONIAL SECTION --- */
 .testimonials-section-wavy {
-    background-color: var(--bg-primary); /* Latar kuning distro dikembalikan */
+    background-color: var(--bg-primary);
     position: relative;
     padding: 0;
     z-index: 1;
 }
 
-/* Pengaturan Jarak Konten (Agar tidak tertabrak gelombang) */
 .testi-container-wavy {
-    padding: 140px 0 160px 0; /* Padding tebal atas bawah */
+    padding: 140px 0 160px 0;
 }
 
-/* --- SVG WAVES --- */
 .wave-divider {
     position: absolute;
     left: 0;
@@ -628,7 +607,7 @@
 
 .wave-divider svg {
     width: calc(100% + 1.3px);
-    height: 110px; /* Tinggi gelombang proporsional */
+    height: 110px;
 }
 
 /* --- HEADERS & BADGES --- */
@@ -639,7 +618,7 @@
 .highlight-white-clean {
     font-weight: 900;
     color: var(--text-secondary);
-    background-color: #FFFFFF; /* Highlight berubah putih karena background kuning */
+    background-color: #FFFFFF;
     padding: 2px 18px;
     border: none !important;
     display: inline-block;
@@ -654,7 +633,7 @@
     padding: 8px 20px;
     border-radius: 50px;
     border: 1px solid #FFFFFF;
-    box-shadow: 0 5px 15px rgba(76, 32, 19, 0.08); /* Shadow sedikit ditebalkan untuk pop-out dari kuning */
+    box-shadow: 0 5px 15px rgba(76, 32, 19, 0.08); 
     font-size: 0.9rem;
 }
 
@@ -770,47 +749,42 @@
         text-align: center;
     }
     .hero-section {
-        /* Ganti min-height jadi auto biar section-nya bisa melar ke bawah kalo konten penuh */
         min-height: 100vh; 
         height: auto; 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        /* Tambahin padding bottom gede biar konten gak kepentok wave di paling bawah */
         padding-bottom: 180px !important; 
         padding-top: 60px;
     }
 
-    /* Rapatkan jarak "HEY!" ke tombol */
     .stagger-wrapper {
         margin-bottom: 10px;
     }
 
-    /* Rapatkan jarak tombol ke Judul Produk blay */
     .product-title-wrapper {
-        margin-top: 30px; /* Dikurangi dari 50px biar naik */
+        margin-top: 30px;
         margin-bottom: 10px;
     }
     
     .active-product-title {
-        font-size: 2.2rem; /* Kecilin dikit biar gak makan tempat */
+        font-size: 2.2rem;
     }
 
-    /* Area Kartu blay */
+    /* Area Kartu */
     .modern-stack-container {
-        height: 250px; /* Kecilin lagi tingginya blay */
+        height: 250px;
         margin-top: 40px;
     }
 
     .floating-card {
-        width: 180px; /* Kecilin dikit lagi biar proporsional di HP layar kecil */
-        border: 10px solid white; /* Kecilin bordernya biar gak kegedean di HP */
+        width: 180px; 
+        border: 10px solid white;
     }
 
-    /* Naikin Posisi Nomor Navigasi blay */
     .stack-pagination {
-        bottom: -30px; /* Naikin biar lebih deket ke pantat kartu */
+        bottom: -30px; 
         padding: 5px 15px;
     }
 
@@ -820,7 +794,6 @@
         font-size: 0.8rem;
     }
 
-    /* Fix posisi Wave biar beneran di paling bawah section yang melar */
     .hero-wave {
         position: absolute;
         bottom: 0;

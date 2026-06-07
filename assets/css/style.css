@@ -135,10 +135,9 @@
     color: #FFFFFF !important;
 }
 
-/* --- PAKSA SELEKTOR SPESIFIK BIAR GAK KALAH SAMA CSS LAIN --- */
 .nav-col-right a.nav-icon-btn,
 .nav-icon-btn {
-    color: #4c2013 !important; /* Langsung kunci pakai warna cokelat distro lu, cegah variabel kosong */
+    color: #4c2013 !important; 
     font-size: 1.35rem !important; 
     width: 42px !important;
     height: 42px !important;
@@ -146,17 +145,16 @@
     align-items: center !important;
     justify-content: center !important;
     text-decoration: none !important;
-    background-color: #FBF9F6 !important; /* Warna krem soft di dalam lingkaran */
+    background-color: #FBF9F6 !important; 
     border-radius: 50% !important;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    border: none !important; /* Pastikan murni borderless */
+    border: none !important; 
 }
 
-/* UI/UX Hover Feedback - Paksa Tukar Warna */
 .nav-col-right a.nav-icon-btn:hover,
 .nav-icon-btn:hover {
-    background-color: #4c2013 !important; /* Latar berubah cokelat */
-    color: #f8dc3d !important; /* Ikon berubah kuning distro saat disentuh */
+    background-color: #4c2013 !important; 
+    color: #f8dc3d !important; 
 }
 
 /* --- BADGE NOTIFIKASI KERANJANG --- */

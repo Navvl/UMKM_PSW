@@ -36,7 +36,6 @@ $orders = mysqli_query($conn, "
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Menggunakan file CSS baru khusus profil -->
     <link rel="stylesheet" href="assets/css/profil.css">
 </head>
 
@@ -44,7 +43,6 @@ $orders = mysqli_query($conn, "
 
 <?php include "components/navbar.php"; ?>
 
-<!-- Padding top 140px agar aman dari navbar fixed -->
 <div class="container pb-5" style="padding-top: 140px;">
 
     <div class="d-flex align-items-center gap-3 mb-5">
@@ -53,7 +51,7 @@ $orders = mysqli_query($conn, "
 
     <div class="row g-4">
         
-        <!-- KOLOM KIRI: KARTU IDENTITAS USER -->
+        <!-- KARTU IDENTITAS USER -->
         <div class="col-lg-4">
             <div class="profile-card-modern text-center">
                 <div class="profile-avatar mx-auto mb-3">
@@ -83,10 +81,10 @@ $orders = mysqli_query($conn, "
             </div>
         </div>
 
-        <!-- KOLOM KANAN: KONTEN BERDASARKAN ROLE -->
+        <!-- KONTEN BERDASARKAN ROLE -->
         <div class="col-lg-8">
             
-            <!-- KHUSUS USER: RIWAYAT PESANAN -->
+            <!-- RIWAYAT PESANAN BUAT USER AJAAAAAA -->
             <?php if($data_user['role'] == 'user'): ?>
             <div class="profile-content-card">
                 <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
@@ -112,7 +110,6 @@ $orders = mysqli_query($conn, "
                             ?>
                             <tr class="border-bottom">
                                 <td class="fw-bold text-muted">#<?= $no++ ?></td>
-                                <!-- Menampilkan format tanggal yang rapi -->
                                 <td><?= date('d M Y, H:i', strtotime($o['created_at'])) ?></td>
                                 <td class="text-muted small">
                                     <?= empty($o['catatan']) ? '-' : (strlen($o['catatan']) > 20 ? substr($o['catatan'], 0, 20).'...' : $o['catatan']) ?>
@@ -142,7 +139,7 @@ $orders = mysqli_query($conn, "
             </div>
             <?php endif; ?>
 
-            <!-- KHUSUS ADMIN: DASHBOARD QUICK LINKS -->
+            <!-- DASHBOARD ADMINNN -->
             <?php if($data_user['role'] == 'admin'): ?>
             <div class="profile-content-card">
                 <h5 class="fw-bold mb-4 d-flex align-items-center gap-2">
@@ -172,21 +169,21 @@ $orders = mysqli_query($conn, "
                         </a>
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="col-md-12">
-    <a href="admin_messages.php" class="admin-quick-card">
-        <div class="icon-wrapper">
-            <i class="bi bi-envelope-fill"></i>
-        </div>
+                    <div class="col-md-6">
+                        <a href="admin_messages.php" class="admin-quick-card">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
 
-        <div class="text-wrapper">
-            <span class="title">Customer Messages</span>
-            <span class="desc">View messages from contact form</span>
-        </div>
+                            <div class="text-wrapper">
+                                <span class="title">Customer Messages</span>
+                                <span class="desc">View messages from contact form</span>
+                            </div>
 
-        <i class="bi bi-chevron-right ms-auto arrow-icon"></i>
-    </a>
-</div>
+                            <i class="bi bi-chevron-right ms-auto arrow-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
                         <a href="Pesanan.php" class="admin-quick-card primary-action">
                             <div class="icon-wrapper"><i class="bi bi-clipboard2-check-fill"></i></div>
                             <div class="text-wrapper">
