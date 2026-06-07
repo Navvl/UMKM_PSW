@@ -8,7 +8,6 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - BananaGo</title>
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet"/>
 
@@ -191,13 +190,13 @@ session_start();
 
             <div class="info-list">
                 <div>📍 <span>Batam, Indonesia</span></div>
-                <div>📞 <span>0812-3456-7890</span></div>
+                <div>📞 <span>0813-6136-7657</span></div>
                 <div>✉️ <span>bananago@gmail.com</span></div>
                 <div>⏰ <span>09.00 - 21.00</span></div>
             </div>
 
-            <a href="kirimwa.id/bananago.batam" class="wa-btn">
-                Chat WhatsApp
+           <a href="https://kirimwa.id/bananago.batam" class="wa-btn">
+    Chat WhatsApp
             </a>
         </div>
 
