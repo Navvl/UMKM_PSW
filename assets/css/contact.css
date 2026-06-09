@@ -147,4 +147,25 @@
     .contact-title h1 {
         font-size: 40px;
     }
+
+     .error-box {
+            background-color: #dc3545;
+            color: white;
+            padding: 14px 16px;
+            border: 3px solid #4c2013;
+            border-radius: 18px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: -5px;
+            margin-bottom: 5px;
+            display: none; /* Sembunyi secara default */
+            text-align: left;
+        }
+        .error-box i {
+            margin-right: 8px;
+        }
+        .input-error {
+            border-color: #dc3545 !important;
+            background-color: #fff5f5;
+        }
 }
