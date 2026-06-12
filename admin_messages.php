@@ -11,7 +11,8 @@ $result = mysqli_query($conn, $query);
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Pesan Masuk - Admin</title>
+    <title>Banana Go</title>
+    <link rel="icon" type="image/jpeg" href="assets/img/icon.png">
 
     <style>
         body {

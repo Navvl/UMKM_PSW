@@ -19,9 +19,9 @@
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
-                <p><i class="bi bi-house-door-fill me-2"></i> Jl. Pisang No. 123, Batam</p>
-                <p><i class="bi bi-envelope-fill me-2"></i> hello@bananago.com</p>
-                <p><i class="bi bi-whatsapp me-2"></i> +62 812-3456-7890</p>
+                <p><i class="bi bi-house-door-fill me-2"></i>Jl. Orchid Park No.72 BLOK C1, Taman Baloi, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29444</p>
+                <p><i class="bi bi-envelope-fill me-2"></i> bananago@gmail.com</p>
+                <p><i class="bi bi-whatsapp me-2"></i>0813-6136-7657</p>
             </div>
 
         </div>
