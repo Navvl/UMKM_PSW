@@ -13,6 +13,8 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <title>Banana Go</title>
     <link rel="icon" type="image/jpeg" href="assets/img/icon.png">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
 
     <style>
         body {
@@ -62,6 +64,7 @@ $result = mysqli_query($conn, $query);
             font-weight: bold;
         }
     </style>
+
 </head>
 <body>
 
@@ -95,6 +98,5 @@ $result = mysqli_query($conn, $query);
         <?php } ?>
     </tbody>
 </table>
-
 </body>
 </html>

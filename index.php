@@ -19,7 +19,6 @@ session_start();
   </head>
   <body>
     <?php include 'components/navbar.php'; ?>
-<body class="home-page"></body>
     <section class="hero-section">
         <div class="hero-bg-text">BANANAGO</div>
 
