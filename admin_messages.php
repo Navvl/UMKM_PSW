@@ -15,56 +15,8 @@ $result = mysqli_query($conn, $query);
     <link rel="icon" type="image/jpeg" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8dc3d;
-            padding: 40px;
-            color: #4c2013;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fffaf0;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 8px 8px 0 #4c2013;
-        }
-
-        th, td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background: #4c2013;
-            color: #f8dc3d;
-        }
-
-        tr:hover {
-            background: #fff3b0;
-        }
-
-        .btn-back {
-            display: inline-block;
-            margin-bottom: 20px;
-            background: #4c2013;
-            color: #f8dc3d;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
-
+    <link rel="stylesheet" href="assets/css/admin_messages.css" />
+    
 </head>
 <body>
 
