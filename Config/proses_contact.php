@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $pesan = $_POST['pesan'];
 
-    $query = "INSERT INTO messages (nama, email, pesan)
-              VALUES ('$nama', '$email', '$pesan')";
+    $query = "INSERT INTO messages (nama, email, pesan, created_at)
+              VALUES ('$nama', '$email', '$pesan', NOW())";
 
     $insert = mysqli_query($conn, $query);
 

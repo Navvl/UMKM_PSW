@@ -11,16 +11,17 @@ session_start();
     <link rel="icon" type="image/jpeg" href="assets/img/icon.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/> 
 
+    <!-- css yang dipakai di bagian contact -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/contact.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
+<!-- ini yg dipakai berulang x di halaman mn pun -->
     <?php include 'components/navbar.php'; ?>
     
     <section class="contact-section">
@@ -30,6 +31,8 @@ session_start();
             <p>Hubungi kami untuk pemesanan, kerja sama, atau pertanyaan.</p>
         </div>
 
+        <!-- grid sytem antara info card dan form pesan -->
+         <!-- info card -->
         <div class="contact-wrapper">
             <div class="contact-card info-card">
                 <h2>Informasi detail</h2>
@@ -49,6 +52,7 @@ session_start();
                 </a>
             </div>
 
+                <!-- form pesan  -->
             <div class="contact-card form-card">
                 <h2>Kirim Pesan</h2>
 
@@ -58,14 +62,14 @@ session_start();
 
                     <input type="email" id="email" name="email" placeholder="Email kamu" required>
                     
-                    <div id="emailError" style="display: none; background-color: #dc3545; color: white; padding: 14px 16px; border: 3px solid #4c2013; border-radius: 18px; font-size: 14px; font-weight: 700; margin-top: -5px; margin-bottom: 5px; text-align: left; font-family: 'Poppins', sans-serif;">
-                        <i class="bi bi-exclamation-triangle-fill" style="margin-right: 8px;"></i><span id="errorText"></span>
-                    </div>
-
                     <textarea id="pesan" name="pesan" placeholder="Tulis pesan kamu..." maxlength="200" required></textarea>
                     
                     <div id="charCount" style="text-align: right; font-size: 0.85rem; font-weight: 600; color: #4c2013; opacity: 0.7; margin-bottom: 10px;">
                         200 characters remaining
+                    </div>
+
+                     <div id="emailError" style="display: none; background-color: #dc3545; color: white; padding: 14px 16px; border: 3px solid #4c2013; border-radius: 18px; font-size: 14px; font-weight: 700; margin-top: -5px; margin-bottom: 5px; text-align: left; font-family: 'Poppins', sans-serif;">
+                        <i class="bi bi-exclamation-triangle-fill" style="margin-right: 8px;"></i><span id="errorText"></span>
                     </div>
 
                     <button type="submit" id="btnSubmit">
@@ -75,6 +79,7 @@ session_start();
             </div>
         </div>
 
+        <!-- BAGIAN MAPS UNTUK MEMPERMUDAH CUSTOMER CARI LOKASI KITA "MAPS" -->
         <div class="map-card">
             <div class="map-title">
                 <h2>Lokasi Kami</h2>
@@ -91,10 +96,12 @@ session_start();
             </iframe>
         </div>
     </section>
-        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+
     <script>
-        // --- 1. Fitur Pencatat Sisa Karakter Teks ---
+        //  1. Fitur Pencatat Sisa Karakter Teks ---=
         const pesanInput = document.getElementById('pesan');
         const charCount = document.getElementById('charCount');
 
@@ -106,54 +113,76 @@ session_start();
             charCount.innerText = remaining + ' characters remaining';
         });
 
-
-        // --- 2. Fitur Logika Validasi Email Menggunakan JavaScript ---
+        //  2. Validasi Form Menyeluruh Menggunakan JS
         const contactForm = document.querySelector('form');
+        // Ambil elemen nama menggunakan querySelector karena tidak memiliki ID
+        const namaInput = document.querySelector('input[name="nama"]'); 
         const emailInput = document.getElementById('email');
         const emailError = document.getElementById('emailError');
         const errorText = document.getElementById('errorText');
         const btnSubmit = document.getElementById('btnSubmit');
 
         contactForm.addEventListener('submit', function (event) {
+            // Ambil semua nilai (value) dan buang spasi kosong di awal/akhir teks
+            const namaValue = namaInput.value.trim();
             const emailValue = emailInput.value.trim();
+            const pesanValue = pesanInput.value.trim();
 
-            // Cek kondisi: jika teks kosong atau tidak ada lambang '@'
-            if (emailValue === "" || !emailValue.includes('@')) {
-                // Tahan form agar tidak pindah halaman ke proses_contact.php
-                event.preventDefault(); 
+            // Reset tampilan error setiap kali tombol submit ditekan ulang
+            emailError.style.display = 'none';
+            namaInput.style.borderColor = '';
+            emailInput.style.borderColor = '';
+            emailInput.style.backgroundColor = '';
+            pesanInput.style.borderColor = '';
+
+            // CEK KONDISI 1: Apakah ada kolom yang dibiarkan kosong?
+            if (namaValue === "" || emailValue === "" || pesanValue === "") {
+                event.preventDefault(); // Tahan pengiriman data
                 
-                // Masukkan teks pesan error secara dinamis lewat JS
-                errorText.innerText = "Sertakan '@' pada alamat email. '" + (emailValue || " ") + "' tidak memiliki '@'.";
-                
-                // Perintahkan kotak merah untuk tampil di layar
+                // Ini bagian peringatan kalau kosong
+                errorText.innerText = "Mohon isi semua kolom (Nama, Email, dan Pesan) sebelum mengirim.";
                 emailError.style.display = 'block';
+
+                // Beri garis merah pada kolom yang masih kosong agar user tahu
+                if (namaValue === "") namaInput.style.borderColor = '#dc3545';
+                if (emailValue === "") emailInput.style.borderColor = '#dc3545';
+                if (pesanValue === "") pesanInput.style.borderColor = '#dc3545';
                 
-                // Ubah border input email menjadi merah cerah dan berikan background soft-red
-                emailInput.style.borderColor = '#dc3545';
-                emailInput.style.backgroundColor = '#fff5f5';
-                
-                // Kembalikan fokus kursor ketikan ke kolom email
-                emailInput.focus();
                 return false;
             }
 
-            // Jika email sudah benar (ada '@'), jalankan loading submit kamu
-            emailError.style.display = 'none';
-            emailInput.style.borderColor = '';
-            emailInput.style.backgroundColor = '';
-            
+            // CEK KONDISI 2: Jika semua terisi, apakah format emailnya sudah benar?
+            if (!emailValue.includes('@')) {
+                event.preventDefault(); // Tahan pengiriman data
+                
+                errorText.innerText = "Sertakan '@' pada alamat email. '" + emailValue + "' tidak memiliki '@'.";
+                emailError.style.display = 'block';
+                
+                emailInput.style.borderColor = '#dc3545';
+                emailInput.style.backgroundColor = '#fff5f5';
+                emailInput.focus();
+                
+                return false;
+            }
+
+            // Jika semua kondisi di atas aman, jalankan proses loading
             btnSubmit.innerHTML = 'Sending...';
             btnSubmit.disabled = true;
         });
 
-        // Event listener pasif: hilangkan efek error seketika saat user mulai mengetik ulang
-        emailInput.addEventListener('input', function() {
+        // Event listener tambahan: hilangkan efek error seketika saat user mulai mengetik di kolom manapun
+        const resetErrorStyle = function() {
             emailError.style.display = 'none';
-            emailInput.style.borderColor = '';
-            emailInput.style.backgroundColor = '';
-        });
+            this.style.borderColor = '';
+            this.style.backgroundColor = '';
+        };
+
+        namaInput.addEventListener('input', resetErrorStyle);
+        emailInput.addEventListener('input', resetErrorStyle);
+        pesanInput.addEventListener('input', resetErrorStyle);
     </script>
-    
+
+<!-- ini yg dipakai berulang x di halaman mn pun -->
     <?php include 'components/footer.php'; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
